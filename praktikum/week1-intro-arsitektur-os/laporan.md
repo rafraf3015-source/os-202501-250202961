@@ -174,6 +174,4 @@ https://www.geeksforgeeks.org/operating-systems/difference-between-microkernel-a
 
 https://kumparan.com/ragam-info/8-contoh-sistem-operasi-yang-biasa-digunakan-pada-komputer-211u4469u9H/full
 
-https://kumparan.com/ragam-info/8-contoh-sistem-operasi-yang-biasa-digunakan-pada-komputer-211u4469u9H/full
-
 https://www.sekawanmedia.co.id/blog/apa-itu-kernel/
