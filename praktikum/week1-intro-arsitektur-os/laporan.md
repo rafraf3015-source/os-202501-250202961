@@ -1,7 +1,7 @@
 
 #laporan
 
-***mengenal microkernel,monolitik dan layered architecture*
+**mengenal microkernel,monolitik dan layered architecture**
 
 *Apa itu Micro-Kernel*
 
@@ -60,7 +60,7 @@ Kerugian Arsitektur Berlapis
 
 
 
-***-perbedaan monolithic kernel, microkernel, dan layered architecture*
+**-perbedaan monolithic kernel, microkernel, dan layered architecture**
 
 Struktur  
 
@@ -100,7 +100,7 @@ Arsitektur Berlapis = Tinggi, harus jelas fungsi dari setiap lapisan
 
 
 
-***-Contoh OS nyata yang menggunakan masing-masing model*
+**-Contoh OS nyata yang menggunakan masing-masing model**
 
 1. PC DOS (Personal Computer Disk Operating System)
 Sistem operasi ini merupakan sistem operasi yang paling banyak dipakai sebelum munculnya sistem operasi windows buatan Microsoft. Sistem operasi ini dibuat oleh Microsoft untuk mesin IBM. IBM mengedarkan PC DOS bersama dengan komputer yang dijualnya.
@@ -131,7 +131,7 @@ Sistem operasi ini merupakan turunan dari UNIX. Dikembangkan oleh seorang mahasi
 
 
 
-***-Analisis: model mana yang paling relevan untuk sistem modern?*
+**-Analisis: model mana yang paling relevan untuk sistem modern?**
 
 Kernel Monolitik
 
