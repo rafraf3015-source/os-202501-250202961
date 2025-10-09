@@ -1,0 +1,83 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36" version="28.2.5">
+  <diagram name="Page-1" id="o0NG6jqeDFU1xDL7jZ0M">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-7" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="al0pJD87Dy6w2EfeBlAW-1" target="al0pJD87Dy6w2EfeBlAW-6">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-1" value="Aplikasi" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="140" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-9" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="al0pJD87Dy6w2EfeBlAW-3" target="al0pJD87Dy6w2EfeBlAW-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="al0pJD87Dy6w2EfeBlAW-3" target="al0pJD87Dy6w2EfeBlAW-6">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="370" />
+              <mxPoint x="505" y="280" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-3" value="Kernel&amp;nbsp;&lt;div&gt;Trap handler&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="360" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="al0pJD87Dy6w2EfeBlAW-4" target="al0pJD87Dy6w2EfeBlAW-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="425" y="560" />
+              <mxPoint x="505" y="560" />
+              <mxPoint x="505" y="390" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-4" value="Hardware" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="570" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-11" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="al0pJD87Dy6w2EfeBlAW-5" target="al0pJD87Dy6w2EfeBlAW-4">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-5" value="kernel System&lt;div&gt;Call handler&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="460" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="al0pJD87Dy6w2EfeBlAW-6" target="al0pJD87Dy6w2EfeBlAW-3">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="al0pJD87Dy6w2EfeBlAW-6" target="al0pJD87Dy6w2EfeBlAW-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="505" y="270" />
+              <mxPoint x="505" y="170" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-6" value="System call interface in User Space" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="365" y="250" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-15" value="Program melakukan instruksi pemanggilan system call (misalnya interrupt software atau trap)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="230" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-16" value="Transisi mode dari User Mode ke Kernel Mode terjadi melalui instruksi trap/interrupt" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="160" y="340" width="170" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-17" value="Kernel menerima permintaan system call, melakukan validasi dan memprosesnya" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="165" y="450" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-18" value="Kernel melakukan operasi pada hardware atau sumber daya lain (misal baca tulis file, alokasi memory, dll)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="165" y="560" width="160" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-19" value="Kernel menerima hasil dari hardware/resource" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="460" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-20" value="Kernel mengembalikan hasil ke bagian user space (system call interface)" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="545" y="300" width="150" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="al0pJD87Dy6w2EfeBlAW-21" value="Program Aplikasi menerima hasil system call dan melanjutkan eksekusi di user mode" style="text;strokeColor=none;align=center;fillColor=none;html=1;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
+          <mxGeometry x="530" y="190" width="150" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

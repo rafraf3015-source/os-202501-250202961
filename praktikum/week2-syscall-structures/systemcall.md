@@ -3,7 +3,7 @@
 
 1. Mengapa system call penting untuk keamanan OS?
 
-System call merupakan elemen penting dalam sistem operasi modern yang berperan sebagai jembatan aman antara aplikasi di ruang pengguna (user space) dan kernel sistem operasi yang memiliki akses penuh terhadap sumber daya perangkat keras dan memori sistem. Fungsi utama system call adalah memberikan layanan yang dibutuhkan oleh aplikasi, seperti pengelolaan file, proses, dan memori, tanpa memberikan akses langsung ke bagian kernel yang rawan. Hal ini sangat penting untuk menjaga keamanan sistem operasi karena aplikasi tidak dapat mengakses perangkat keras atau data kernel secara langsung, sehingga mengurangi risiko akses ilegal, manipulasi data, atau kerusakan sistem yang dapat disebabkan oleh aplikasi yang berjalan dengan hak akses terbatas.
+System call merupakan elemen penting dalam sistem operasi modern yang berperan sebagai jembatan aman antara aplikasi di ruang pengguna (user) dan kernel sistem operasi yang memiliki akses penuh terhadap sumber daya perangkat keras dan memori sistem. Fungsi utama system call adalah memberikan layanan yang dibutuhkan oleh aplikasi, seperti pengelolaan file, proses, dan memori, tanpa memberikan akses langsung ke bagian kernel yang rawan. Hal ini sangat penting untuk menjaga keamanan sistem operasi karena aplikasi tidak dapat mengakses perangkat keras atau data kernel secara langsung, sehingga mengurangi risiko akses ilegal, manipulasi data, atau kerusakan sistem yang dapat disebabkan oleh aplikasi yang berjalan dengan hak akses terbatas.
 
 2. Bagaimana OS memastikan transisi user–kernel berjalan aman?
 
