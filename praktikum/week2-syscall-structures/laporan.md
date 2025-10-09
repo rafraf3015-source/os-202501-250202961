@@ -1,42 +1,184 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: [Struktur System Call dan Fungsi kernel]
 
 ---
 
 ## Identitas
-- **Nama**  : [Nama Mahasiswa]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [Kelas]
+- **Nama**  : [Rafi nurul fauzan]  
+- **NIM**   : [250202961]  
+- **Kelas** : [1IKRB]
 
 ---
 
 ## Tujuan
-Tuliskan tujuan praktikum minggu ini.  
-Contoh:  
-> Mahasiswa mampu menjelaskan fungsi utama sistem operasi dan peran kernel serta system call.
-
+> mengenal tentang system call, mempelajari mekanisme system call dan mampu mengunakan linux untuk menampilakn dan menganalisa system call
 ---
 
 ## Dasar Teori
-Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
+- System call adalah antarmuka antara program dan kernel yang memungkinkan aplikasi berinteraksi dengan perangkat keras secara aman melalui layanan os
+
+- Struktur Sistem Operasi adalah Sistem operasi memiliki struktur yang kompleks, tetapi dapat dibagi menjadi beberapa komponen utama, seperti kernel, system call interface, device driver, file system, dan process management.
+
+-  Kernel: Kernel adalah inti sistem operasi yang mengelola sumber daya sistem dan menyediakan layanan ke aplikasi.
+
+-  Model Arsitektur Sistem Operasi adalah Sistem operasi dapat memiliki beberapa model arsitektur, seperti monolithic kernel, microkernel, dan layered architecture.
+
+- Fungsi Sistem Operasi adalah Sistem operasi memiliki beberapa fungsi, seperti mengelola proses, mengelola memori, mengelola file, dan menyediakan layanan ke aplikasi.
 
 ---
 
 ## Langkah Praktikum
-1. Langkah-langkah yang dilakukan.  
-2. Perintah yang dijalankan.  
-3. File dan kode yang dibuat.  
-4. Commit message yang digunakan.
-
+1. masuk kedalam ubuntu lalu install perintah starce dan man
+2. jalan kan perintah strace ls, strace -e trace=open,read,write,close cat /etc/passwd , dmesg | tail -n 10
+3. lalu analisa lah perintah perintah tersebut
+4. lalu buat diagram alur system call dari user ke kernel lalu kembali ke user mengunakan draw.oi
+5. lalu up dengan cara git add ., git commit -m "week2", git push -u origin main
 ---
 
 ## Kode / Perintah
-Tuliskan potongan kode atau perintah utama:
-```bash
-uname -a
-lsmod | head
-dmesg | head
+
+strace ls
+
+execve("/usr/bin/ls", ["ls"], 0x7ffe6d7a5080 /* 62 vars */) = 0
+brk(NULL)                               = 0x5cec2a19e000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7e5d466df000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=35463, ...}) = 0
+mmap(NULL, 35463, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7e5d466d6000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libselinux.so.1", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=174472, ...}) = 0
+mmap(NULL, 181960, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7e5d466a9000
+mmap(0x7e5d466af000, 118784, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x6000) = 0x7e5d466af000
+mmap(0x7e5d466cc000, 24576, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x23000) = 0x7e5d466cc000
+mmap(0x7e5d466d2000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x29000) = 0x7e5d466d2000
+mmap(0x7e5d466d4000, 5832, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7e5d466d4000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\243\2\0\0\0\0\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+fstat(3, {st_mode=S_IFREG|0755, st_size=2125328, ...}) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2170256, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7e5d46497000
+mmap(0x7e5d464bf000, 1605632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x7e5d464bf000
+mmap(0x7e5d46647000, 323584, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b0000) = 0x7e5d46647000
+mmap(0x7e5d46696000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1fe000) = 0x7e5d46696000
+mmap(0x7e5d4669c000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x7e5d4669c000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libpcre2-8.so.0", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=625344, ...}) = 0
+mmap(NULL, 627472, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x7e5d463fd000
+mmap(0x7e5d463ff000, 450560, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x2000) = 0x7e5d463ff000
+mmap(0x7e5d4646d000, 163840, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x70000) = 0x7e5d4646d000
+mmap(0x7e5d46495000, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x97000) = 0x7e5d46495000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x7e5d463fa000
+arch_prctl(ARCH_SET_FS, 0x7e5d463fa800) = 0
+set_tid_address(0x7e5d463faad0)         = 1680
+set_robust_list(0x7e5d463faae0, 24)     = 0
+rseq(0x7e5d463fb120, 0x20, 0, 0x53053053) = 0
+mprotect(0x7e5d46696000, 16384, PROT_READ) = 0
+mprotect(0x7e5d46495000, 4096, PROT_READ) = 0
+mprotect(0x7e5d466d2000, 4096, PROT_READ) = 0
+mprotect(0x5cebf70aa000, 8192, PROT_READ) = 0
+mprotect(0x7e5d46717000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x7e5d466d6000, 35463)           = 0
+statfs("/sys/fs/selinux", 0x7ffe575c3240) = -1 ENOENT (No such file or directory)
+statfs("/selinux", 0x7ffe575c3240)      = -1 ENOENT (No such file or directory)
+getrandom("\x29\xfa\x2c\x0e\xde\x40\xcb\xd2", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x5cec2a19e000
+brk(0x5cec2a1bf000)                     = 0x5cec2a1bf000
+openat(AT_FDCWD, "/proc/filesystems", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0444, st_size=0, ...}) = 0
+read(3, "nodev\tsysfs\nnodev\ttmpfs\nnodev\tbd"..., 1024) = 390
+read(3, "", 1024)                       = 0
+close(3)                                = 0
+access("/etc/selinux/config", F_OK)     = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/usr/lib/locale/locale-archive", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=3055776, ...}) = 0
+mmap(NULL, 3055776, PROT_READ, MAP_PRIVATE, 3, 0) = 0x7e5d4610f000
+close(3)                                = 0
+ioctl(1, TCGETS, {c_iflag=ICRNL|IXON|IUTF8, c_oflag=NL0|CR0|TAB0|BS0|VT0|FF0|OPOST|ONLCR, c_cflag=B38400|CS8|CREAD, c_lflag=ISIG|ICANON|ECHO|ECHOE|ECHOK|IEXTEN|ECHOCTL|ECHOKE, ...}) = 0
+ioctl(1, TIOCGWINSZ, {ws_row=8, ws_col=159, ws_xpixel=0, ws_ypixel=0}) = 0
+openat(AT_FDCWD, ".", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 3
+fstat(3, {st_mode=S_IFDIR|0750, st_size=4096, ...}) = 0
+getdents64(3, 0x5cec2a1a4ce0 /* 15 entries */, 32768) = 496
+getdents64(3, 0x5cec2a1a4ce0 /* 0 entries */, 32768) = 0
+close(3)                                = 0
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0x2), ...}) = 0
+write(1, "README-cloudshell.txt\n", 22README-cloudshell.txt
+) = 22
+close(1)                                = 0
+close(2)                                = 0
+exit_group(0)                           = ?
++++ exited with 0 +++
+
+
+
+strace -e trace=open,read,write,close cat /etc/passwd
+
+
+close(3)                                = 0
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\243\2\0\0\0\0\0"..., 832) = 832
+close(3)                                = 0
+close(3)                                = 0
+read(3, "root:x:0:0:root:/root:/bin/bash\n"..., 131072) = 1421
+write(1, "root:x:0:0:root:/root:/bin/bash\n"..., 1421root:x:0:0:root:/root:/bin/bash
+daemon:x:1:1:daemon:/usr/sbin:/usr/sbin/nologin
+bin:x:2:2:bin:/bin:/usr/sbin/nologin
+sys:x:3:3:sys:/dev:/usr/sbin/nologin
+sync:x:4:65534:sync:/bin:/bin/sync
+games:x:5:60:games:/usr/games:/usr/sbin/nologin
+man:x:6:12:man:/var/cache/man:/usr/sbin/nologin
+lp:x:7:7:lp:/var/spool/lpd:/usr/sbin/nologin
+mail:x:8:8:mail:/var/mail:/usr/sbin/nologin
+news:x:9:9:news:/var/spool/news:/usr/sbin/nologin
+uucp:x:10:10:uucp:/var/spool/uucp:/usr/sbin/nologin
+proxy:x:13:13:proxy:/bin:/usr/sbin/nologin
+www-data:x:33:33:www-data:/var/www:/usr/sbin/nologin
+backup:x:34:34:backup:/var/backups:/usr/sbin/nologin
+list:x:38:38:Mailing List Manager:/var/list:/usr/sbin/nologin
+irc:x:39:39:ircd:/run/ircd:/usr/sbin/nologin
+_apt:x:42:65534::/nonexistent:/usr/sbin/nologin
+nobody:x:65534:65534:nobody:/nonexistent:/usr/sbin/nologin
+systemd-network:x:998:998:systemd Network Management:/:/usr/sbin/nologin
+messagebus:x:100:101::/nonexistent:/usr/sbin/nologin
+polkitd:x:997:997:User for polkitd:/:/usr/sbin/nologin
+syslog:x:101:102::/nonexistent:/usr/sbin/nologin
+dnsmasq:x:999:65534:dnsmasq:/var/lib/misc:/usr/sbin/nologin
+dhcpcd:x:102:65534:DHCP Client Daemon,,,:/usr/lib/dhcpcd:/bin/false
+redis:x:103:104::/var/lib/redis:/usr/sbin/nologin
+sshd:x:104:65534::/run/sshd:/usr/sbin/nologin
+postgres:x:105:106:PostgreSQL administrator,,,:/var/lib/postgresql:/bin/bash
+rafraf3015:x:1000:1000::/home/rafraf3015:/bin/bash
+) = 1421
+read(3, "", 131072)                     = 0
+close(3)                                = 0
+close(1)                                = 0
+close(2)                                = 0
++++ exited with 0 +++
+
+
+
+dmesg | tail -n 10
+
+
+[  460.039995] sd 0:0:2:0: [sdb] Mode Sense: 1f 00 00 08
+[  460.040501] sd 0:0:2:0: [sdb] Write cache: enabled, read cache: enabled, doesn't support DPO or FUA
+[  460.181173]  sdb: sdb1
+[  460.183866] sd 0:0:2:0: [sdb] Attached SCSI disk
+[  460.354665] EXT4-fs (sdb1): mounted filesystem b9f0e455-8c03-483b-a0d6-629a47561fb9 r/w with ordered data mode. Quota mode: none.
+[  461.267355] LoadPin: kernel-module pinning-excluded obj="/lib/modules/6.6.105+/kernel/net/ipv4/netfilter/iptable_nat.ko" pid=2112 cmdline="/sbin/modprobe -q -- iptable_nat"
+[  461.355788] LoadPin: kernel-module pinning-excluded obj="/lib/modules/6.6.105+/kernel/net/netlink/netlink_diag.ko" pid=2133 cmdline="/sbin/modprobe -q -- net-pf-16-proto-4-type-16"
+[  463.861776] LoadPin: kernel-module pinning-excluded obj="/lib/modules/6.6.105+/kernel/net/netfilter/ipset/ip_set.ko" pid=2408 cmdline="/sbin/modprobe -q -- ipt_set"
+[  463.882941] LoadPin: kernel-module pinning-excluded obj="/lib/modules/6.6.105+/kernel/net/netfilter/xt_set.ko" pid=2408 cmdline="/sbin/modprobe -q -- ipt_set"
+[  463.914028] LoadPin: kernel-module pinning-excluded obj="/lib/modules/6.6.105+/kernel/net/ipv6/netfilter/ip6table_nat.ko" pid=2414 cmdline="/sbin/modprobe -q -- ip6table_nat"
+
 ```
 
 ---
@@ -44,6 +186,9 @@ dmesg | head
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/dmsg%20tail.png)
+![Screenshot hasil](screenshots/strace%20-e%20trace.png)
+![Screenshot hasil](screenshots/stracels.png)
 
 ---
 

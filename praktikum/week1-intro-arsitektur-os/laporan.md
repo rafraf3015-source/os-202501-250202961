@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [mengenal microkernel,monolitik dan linux]
+Topik: [Arsitektur Sistem Operasi]
 
 ---
 
@@ -12,13 +12,15 @@ Topik: [mengenal microkernel,monolitik dan linux]
 ---
 
 ## Tujuan
-mengenal kernel dan lapisan lapisan nya, mengetahui contoh contoh os microkernel,monolitik,hybrid dan linux  
+mengenal kernel, mempelajari arsitektur dasar sistem operasi,mampu membuat diagram di draw.oi dan linux  
 ---
 
 ## Dasar Teori
-Dari materi tersebut kita jadi mengerti, semua yang kita lihat bukan lah semua, banyak hal yang kita tidak tau, bahkan yang ada ditampilkan user itu bukan semua nya, di dalam sistem tersebut ada proses bagaimana suatu hal seperti apk,file bisa berjalan, dan sesuatu yang tidak bisa dilhat user adalah kernel, kita jadi tau apa itu mode user apa itu mode kernel, teknologi akan terus berkembang, jangan menanggap kita paling tau semuanya karena itu lah sebuah penyakit bagi ilmu pengetahuan.
-
----
+- Sistem Operasi sebagai Pengelola Sumber Daya adalah Sistem operasi berfungsi sebagai pengelola sumber daya sistem, seperti memori, CPU, dan perangkat keras lainnya.
+- Kernel sebagai Inti Sistem Operasi: Kernel adalah inti sistem operasi yang mengelola sumber daya sistem dan menyediakan layanan ke aplikasi.
+- System Call sebagai Antarmuka: System call adalah antarmuka antara aplikasi dan kernel yang memungkinkan aplikasi membuat permintaan ke kernel.
+- Arsitektur Sistem Operasi adalah Sistem operasi dapat memiliki beberapa model arsitektur, seperti monolithic kernel, microkernel, dan layered architecture.
+- Komponen Sistem Operasi adalah Sistem operasi memiliki beberapa komponen, seperti device driver, file system, dan process management, yang bekerja sama untuk mengelola sumber daya sistem dan menyediakan layanan ke aplikasi.
 
 ## Langkah Praktikum
 1. install viscode,gitbash,ubuntu
@@ -47,6 +49,9 @@ Dari materi tersebut kita jadi mengerti, semua yang kita lihat bukan lah semua, 
 24. cari cmd di windows lalu ketik wsl
 25. ketik seusai tugas uname -a, ismod | head, dmesg | head 
 26. ada yang ketinggalan pastikan sebelum commit&push sudah git config --global user.name "Nama Anda" , git config --global user.email "email@contoh.com"
+26. dan buatlah diagram di draw.oi
+27. ketika semua sudah susun didalam file
+28. lalu up ke github fork
 
 
 ---
@@ -158,14 +163,14 @@ Hasil percobaan di atas menunjukkan beberapa perbedaan antara Linux dan Windows:
 - Linux memiliki sistem file yang lebih fleksibel dan dapat di-custom, sedangkan Windows memiliki sistem file yang lebih terstruktur dan terbatas.
 - Linux memiliki kemampuan untuk mengelola jaringan yang lebih luas dan dapat di-custom, sedangkan Windows memiliki kemampuan jaringan yang lebih terbatas.
 
-tapi perbedaan antara Linux dan Windows tidak hanya terletak pada kernel, tetapi juga pada aplikasi, sistem file, dan arsitektur sistem operasi secara keseluruhan.
+tapi perbedaan antara Linux dan Windows tidak hanya terletak pada kernel, tetapi juga pada aplikasi, sistem file, dan arsitektur sistem operasi secara keseluruhan. 
 
 ---
 
 ## Kesimpulan
 Kernel Linux memiliki kemampuan yang luar biasa dalam mengelola sumber daya sistem, seperti memori, CPU, dan perangkat keras. linux lebih cocok bagi mereka yang ingin mengontrol sistem operasinya dan memiliki kemampuan untuk mengelola jaringan yang lebih luas.
 
-kernel Linux merupakan pilihan yang tepat bagi mereka yang ingin memiliki sistem operasi yang fleksibel, dapat di-custom, dan memiliki kemampuan yang luas.
+jangan menanggap kita paling tau semuanya karena itu lah sebuah penyakit bagi ilmu pengetahuan.
 
 
 ---
@@ -189,3 +194,7 @@ Tuliskan secara singkat:
 
 **Credit:**  
 _Template laporan praktikum Sistem Operasi (SO-202501) – Universitas Putra Bangsa_
+
+_https://course-net.com/blog/pengertian-sistem-operasi-dan-arsitektur-komputer/_
+
+
