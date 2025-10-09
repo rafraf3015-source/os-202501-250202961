@@ -191,7 +191,7 @@ Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/dmsg%20tail.png)
 ![Screenshot hasil](screenshots/strace%20-e%20trace.png)
 ![Screenshot hasil](screenshots/stracels.png)
-![Screenshot hasil](screenshots/tugasweek2.png)
+![Screenshot hasil](screenshots/syscall-diagram.png)
 ---
 
 ## Analisis
