@@ -12,7 +12,7 @@ Topik: [mengenal microkernel,monolitik dan linux]
 ---
 
 ## Tujuan
-mengenal kernel dan lapisan lapisan nya, mengetahui contoh contoh os microkernel,monolitik dan hybrid  
+mengenal kernel dan lapisan lapisan nya, mengetahui contoh contoh os microkernel,monolitik,hybrid dan linux  
 ---
 
 ## Dasar Teori
