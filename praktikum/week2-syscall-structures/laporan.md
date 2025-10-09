@@ -195,31 +195,66 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+
+makna hasil percobaan
+
+
+Strace ls
+
+- strace ls menampilkan system call yang dilakukan oleh perintah ls.
+- Hasilnya menunjukkan bahwa ls melakukan system call seperti execve, access, openat, getdents64, close, fstat, write, dll.
+- Ini menunjukkan bahwa ls menggunakan system call untuk berinteraksi dengan kernel dan mengakses file sistem.
+
+Strace -e trace=open,read,write,close cat /etc/passwd
+
+- strace -e trace=open,read,write,close cat /etc/passwd menampilkan system call yang dilakukan oleh perintah cat /etc/passwd untuk membuka, membaca, menulis, dan menutup file.
+- Hasilnya menunjukkan bahwa cat melakukan system call seperti openat, read, write, close untuk mengakses file /etc/passwd.
+- Ini menunjukkan bahwa cat menggunakan system call untuk berinteraksi dengan kernel dan mengakses file sistem.
+
+Dmesg | tail -n 10
+
+- dmesg | tail -n 10 menampilkan 10 baris terakhir log kernel.
+- Hasilnya menunjukkan bahwa kernel melakukan aktivitas seperti mengatur perangkat keras, mengelola memori, dan menangani interupsi.
+- Ini menunjukkan bahwa kernel bertanggung jawab untuk mengelola sumber daya sistem dan menyediakan layanan ke aplikasi.
+
+Hubungan dengan Teori
+
+- Fungsi kernel: kernel bertanggung jawab untuk mengelola sumber daya sistem dan menyediakan layanan ke aplikasi.
+- System call: system call adalah antarmuka antara aplikasi dan kernel yang memungkinkan aplikasi berinteraksi dengan kernel.
+- Arsitektur OS: arsitektur OS Linux menggunakan model monolithic kernel, di mana kernel memiliki semua komponen sistem operasi dalam satu ruang alamat.
+
+Perbedaan Hasil di Lingkungan OS Berbeda (Linux vs Windows)
+
+- Linux menggunakan model monolithic kernel, sedangkan Windows menggunakan model hybrid kernel.
+- Linux memiliki system call yang lebih terbuka dan dapat diakses oleh aplikasi, sedangkan Windows memiliki system call yang lebih terbatas dan hanya dapat diakses oleh aplikasi yang memiliki hak akses khusus.
+- Linux memiliki log kernel yang lebih rinci dan dapat diakses oleh administrator, sedangkan Windows memiliki log kernel yang lebih terbatas dan hanya dapat diakses oleh administrator yang memiliki hak akses khusus.
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+- Kernel bertanggung jawab untuk mengelola sumber daya sistem dan menyediakan layanan ke aplikasi.
+- Perintah strace dapat digunakan untuk melihat system call yang dilakukan oleh aplikasi.
+- Perintah dmesg dapat digunakan untuk melihat log kernel dan memahami aktivitas kernel.
 
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Fungsi utama system call dalam sistem operasi?]  
+   **Sebagai mekanisme yang memungkinkan program ditingkat user untuk meminta layanan dari sistem operasi kernel**  
+2. [Sebutkan 4 kategori system call yang umum digunakan]  
+   **process Control,File Management,Komunikasi**  
+3. [Mengapa system call tidak bisa dipanggil langsung oleh user program]  
+   **Karena system call bekerja kernel yang memiliki tingkat hak akses yang lebih tinggi dibandingkan user. jika user bisa melakukan panggilan maka berpotensi merusak sistem atau keamanan**  
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini? 
+mempelajari semua dari nol, melawan rasa malas dan command linux 
+- Bagaimana cara Anda mengatasinya? 
+stay fokus belajar memahami bahwa ini lah dunia perkuliahan belajar dari kesalahan dan memperbaiki nya   
 
 ---
 
