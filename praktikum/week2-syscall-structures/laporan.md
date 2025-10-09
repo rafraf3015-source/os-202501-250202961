@@ -34,10 +34,12 @@ Topik: [Struktur System Call dan Fungsi kernel]
 3. lalu analisa lah perintah perintah tersebut
 4. lalu buat diagram alur system call dari user ke kernel lalu kembali ke user mengunakan draw.oi
 5. lalu up dengan cara git add ., git commit -m "week2", git push -u origin main
+
 ---
 
 ## Kode / Perintah
 
+```bash
 strace ls
 
 execve("/usr/bin/ls", ["ls"], 0x7ffe6d7a5080 /* 62 vars */) = 0
