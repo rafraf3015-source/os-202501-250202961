@@ -1,0 +1,52 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0" version="28.2.5">
+  <diagram name="Page-1" id="8OzAJXQXlAr3KzKNeYkf">
+    <mxGraphModel grid="1" page="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-2" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="350" y="157" as="sourcePoint" />
+            <mxPoint x="450" y="157" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="360" y="157" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-3" value="Kernel&lt;div&gt;inti dari sistem operasi yang mengelola komunikasi antara perangkat keras dan perangkat lunak&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;shadow=0;fillColor=#FF3333;" vertex="1" parent="1">
+          <mxGeometry x="520" y="117.5" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-4" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="620" y="210" as="sourcePoint" />
+            <mxPoint x="620" y="270" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-5" value="System call&amp;nbsp;&lt;div&gt;mekanisme yang digunakan program untuk meminta layanan dari kernel&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF33FF;" vertex="1" parent="1">
+          <mxGeometry x="520" y="280" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-7" value="Aplikasi&lt;div&gt;perangkat lunak yang dibuat untuk membantu melakukan tugas contoh nya game,browsing dan mengetik&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4D9900;" vertex="1" parent="1">
+          <mxGeometry x="80" y="280" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-8" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="450" y="310" as="sourcePoint" />
+            <mxPoint x="350" y="310.5" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-9" value="User&lt;div&gt;orang yang mengunakan komputer aplikasi atau sistem untuk melakukan berbagai aktivitas&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FF99FF;" vertex="1" parent="1">
+          <mxGeometry x="80" y="480" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-10" value="" style="shape=flexArrow;endArrow=classic;html=1;rounded=0;" edge="1" parent="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="179.5" y="380" as="sourcePoint" />
+            <mxPoint x="179.5" y="470" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="-QEUK0ZQG6QUlYyqESk0-13" value="Hardware&lt;div&gt;perangkat fisik pada komputer yang bisa dilihat&amp;amp;disentuh&lt;/div&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#C9FF9C;" vertex="1" parent="1">
+          <mxGeometry x="80" y="115" width="200" height="85" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
