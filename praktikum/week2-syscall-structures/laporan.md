@@ -230,14 +230,17 @@ Perbedaan Hasil di Lingkungan OS Berbeda (Linux vs Windows)
 - Linux memiliki log kernel yang lebih rinci dan dapat diakses oleh administrator, sedangkan Windows memiliki log kernel yang lebih terbatas dan hanya dapat diakses oleh administrator yang memiliki hak akses khusus.
 
 
+| No  | Perintah/System Call | Fungsi                           |  Output                         | Analisis                   |
+|------|---------------------|---------------------------------|---------------------------------------|----------------------------------|
+| 1    | execve (ls)         | Menjalankan program `ls`         | `execve("/usr/bin/ls", ["ls"], ...)` | Memulai proses `ls`               |
+| 2    | openat              | Membuka file konfigurasi         | `openat(..., "/etc/ld.so.cache", ...)`| Membuka cache loader library      |
+| 3    | getdents64          | Membaca daftar file dalam direktori | `getdents64(3, ..., 32768) = 496`  | Mengambil daftar file             |
+| 4    | write               | Menulis output ke terminal       | `write(1, "README-cloudshell.txt\n", 22)` | Menampilkan hasil `ls`          |
+| 5    | exit_group          | Mengakhiri proses                | `exit_group(0)`                       | Proses `ls` selesai               |
+| 6    | dmesg               | Log kernel terkait disk          | `[ 460.183866] sd 0:0:2:0: [sdb] Attached SCSI disk` | Disk SCSI terdeteksi       |
+| 7    | dmesg               | Log kernel filesystem            | `[ 460.354665] EXT4-fs (sdb1): mounted filesystem` | Filesystem berhasil dipasang     |
 
-| Aspek             | strace ls                                               | dmesg | tail -n 10                                    | Observasi / Catatan                                |
-|-------------------|---------------------------------------------------------|------------------------------------------------|--------------------------------------------------|
-| Tujuan            | Melacak sistem call yang terjadi saat menjalankan `ls`  | Menampilkan 10 baris log kernel terakhir       | `strace` untuk aplikasi, `dmesg` untuk info kernel |
-| Contoh output     | open(), read(), write(), close(), execve() dll.         | Baris log kernel terbaru dari berbagai subsistem| Output `strace` rinci syscall, `dmesg` berupa event log |
-| Format output     | Baris per syscall dengan argumen dan hasil               | Baris per event log dengan timestamp            | Format sesuai fokus masing-masing                  |
-| Manfaat           | Memahami interaksi aplikasi `ls` dengan sistem           | Memantau aktivitas dan status kernel secara real-time | Debug aplikasi vs monitoring sistem               |
-| Penggunaan perintah| `strace ls`                                             | `dmesg | tail -n 10`                            | Contoh praktis untuk pengecekan aplikasi dan sistem |
+Tabel ini merangkum poin-poin penting dari proses `ls` dan informasi kernel terkait perangkat penyimpanan dari `dmesg`.
 
 
 1. Mengapa system call penting untuk keamanan OS?
