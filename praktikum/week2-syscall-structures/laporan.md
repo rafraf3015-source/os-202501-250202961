@@ -240,8 +240,6 @@ Perbedaan Hasil di Lingkungan OS Berbeda (Linux vs Windows)
 | 6    | dmesg               | Log kernel terkait disk          | `[ 460.183866] sd 0:0:2:0: [sdb] Attached SCSI disk` | Disk SCSI terdeteksi       |
 | 7    | dmesg               | Log kernel filesystem            | `[ 460.354665] EXT4-fs (sdb1): mounted filesystem` | Filesystem berhasil dipasang     |
 
-Tabel ini merangkum poin-poin penting dari proses `ls` dan informasi kernel terkait perangkat penyimpanan dari `dmesg`.
-
 
 1. Mengapa system call penting untuk keamanan OS?
 
