@@ -235,8 +235,7 @@ Perbedaan Hasil di Lingkungan OS Berbeda (Linux vs Windows)
 | 1    | execve (ls)         | Menjalankan program `ls`         | `execve("/usr/bin/ls", ["ls"], ...)` | Memulai proses eksekusi program `ls`                                                         |
 | 2    | openat              | Membuka file konfigurasi         | `openat(..., "/etc/ld.so.cache", O_RDONLY)` | Membuka file cache loader library untuk kebutuhan dynamic linker                             |
 | 3    | getdents64          | Membaca daftar file dalam direktori | `getdents64(3, ..., 32768) = 496` | Mengambil isi direktori untuk menampilkan daftar file                                        |
-| 4    | write               | Menulis output ke terminal       | `write(1, "README-cloudshell.txt
-", 22)` | Menampilkan hasil ke layar atau terminal                                                     |
+| 4    | write               | Menulis output ke terminal       | `write(1 "README-cloudshell.txt", 22)` | Menampilkan hasil ke layar atau terminal                                                     |
 | 5    | exit_group          | Mengakhiri proses                | `exit_group(0)`                     | Proses `ls` selesai dengan status keluar sukses (0)                                         |
 | 6    | dmesg head          | Menampilkan beberapa baris awal log kernel | `[    0.000000] Initializing cgroup subsys cpuset` | Menampilkan pesan kernel awal saat booting sistem, berguna untuk pemantauan proses startup  |
 | 7    | dmesg tail          | Menampilkan beberapa baris akhir log kernel | `[ 12345.678901] usb 1-1: USB disconnect, device number 4` | Menampilkan pesan kernel terbaru, monitor perangkat keras dan status sistem terkini         |
