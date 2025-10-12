@@ -231,15 +231,13 @@ Perbedaan Hasil di Lingkungan OS Berbeda (Linux vs Windows)
 
 
 
-| Aspek            | strace                                      | dmesg                                      | Observasi / Catatan                   |
-|------------------|---------------------------------------------|--------------------------------------------|-------------------------------------|
-| Tujuan           | Melacak sistem call yang dilakukan oleh proses | Menampilkan pesan kernel dan log sistem    | strace fokus pada sistem call aplikasi, dmesg pada log kernel |
-| Contoh output    | open(), read(), write(), close(), execve()  | Informasi booting, driver, hardware error  | Perbedaan output sesuai fokus masing-masing |
-| Informasi penting| Nama syscall, argumen, waktu eksekusi       | Waktu log, jenis pesan, sumber pesan       | Berguna untuk debugging dan pemantauan sistem |
-| Kapan digunakan  | Debugging proses aplikasi                    | Memeriksa status kernel dan hardware       | strace lebih granular aplikasi, dmesg level sistem |
-| Cara penggunaan  | `strace [options] <command>`                 | `dmesg [options]`                          | Perlu akses root untuk autapping lengkap |
-| Format output    | Baris per syscall                            | Baris per pesan log                        | Mudah di-parse untuk analisis lebih lanjut |
-| Contoh penggunaan| `strace -c ls`                              | `dmesg | tail -20`                         | Contoh perintah umum                 |
+| Aspek             | strace ls                                               | dmesg | tail -n 10                                    | Observasi / Catatan                                |
+|-------------------|---------------------------------------------------------|------------------------------------------------|--------------------------------------------------|
+| Tujuan            | Melacak sistem call yang terjadi saat menjalankan `ls`  | Menampilkan 10 baris log kernel terakhir       | `strace` untuk aplikasi, `dmesg` untuk info kernel |
+| Contoh output     | open(), read(), write(), close(), execve() dll.         | Baris log kernel terbaru dari berbagai subsistem| Output `strace` rinci syscall, `dmesg` berupa event log |
+| Format output     | Baris per syscall dengan argumen dan hasil               | Baris per event log dengan timestamp            | Format sesuai fokus masing-masing                  |
+| Manfaat           | Memahami interaksi aplikasi `ls` dengan sistem           | Memantau aktivitas dan status kernel secara real-time | Debug aplikasi vs monitoring sistem               |
+| Penggunaan perintah| `strace ls`                                             | `dmesg | tail -n 10`                            | Contoh praktis untuk pengecekan aplikasi dan sistem |
 
 
 1. Mengapa system call penting untuk keamanan OS?
