@@ -157,7 +157,7 @@ Langkah lanjutan untuk laporan Anda
 | ls -a | -a | Menampilkan semua file termasuk file tersembunyi | . ..percobaan.txt | sukses | Termasuk . dan .. serta file tersembunyi lainnya |
 | cat /etc/passwd | head -n 5 | Menampilkan 5 baris pertama dari passwd | difolder code | sukses | Contoh data akun sistem; sesuaikan jika sensitif |
 | echo "Hello <RAFI><250202961>" > percobaan.txt | - | Menulis string ke file percobaan.txt | tercatat difile | sukses | File baru atau pembaruan jika sudah ada |
-| ls -l percobaan.txt | - | Menampilkan detail file percobaan.txt | keluar code rwk | sukses | Verifikasi hak akses dan kepemilikan |
+| ls -l percobaan.txt | - | Menampilkan detail file percobaan.txt | keluar code rwx | sukses | Verifikasi hak akses dan kepemilikan |
 | chmod 600 percobaan.txt | - | Mengatur izin file menjadi rw------- |  | gagal | Pemilik dapat baca/tulis; grup/others tidak memiliki hak |
 | ls -l percobaan.txt | - | Verifikasi izin setelah perubahan | hasil tetap sama | sukses | Contoh: -rw------- |
 | sudo chown root percobaan.txt | - | Mengubah kepemilikan file menjadi root | disuruh memasukan psword | tidak tau | Perubahan memerlukan hak sudo |
