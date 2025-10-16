@@ -147,39 +147,77 @@ Langkah lanjutan untuk laporan Anda
 - Jika ingin, susun ulang tabel observasi Anda dengan fokus analisis seperti yang telah dijelaskan: kaitkan hasil perintah dengan konsep kernel/system call, dan tambahkan kolom analisis risiko serta rekomendasi keamanan.
 - Sertakan perbandingan ringkas Linux vs Windows terkait kontrol akses berkas dan bagaimana hal itu mempengaruhi kebijakan keamanan di lingkungan Anda.
 
-Kutipan:
-[1] Panggilan Sistem — Dokumentasi Kernel Linux https://translate.google.com/translate?u=https%3A%2F%2Flinux-kernel-labs.github.io%2Frefs%2Fheads%2Fmaster%2Flectures%2Fsyscalls.html&hl=id&sl=en&tl=id&client=srp
-[2] Kernel dalam Sistem Operasi https://translate.google.com/translate?u=https%3A%2F%2Fwww.geeksforgeeks.org%2Foperating-systems%2Fkernel-in-operating-system%2F&hl=id&sl=en&tl=id&client=srp
-[3] Kernel (sistem operasi) https://translate.google.com/translate?u=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FKernel_%28operating_system%29&hl=id&sl=en&tl=id&client=srp
-[4] Panggilan sistem di kernel Linux. Bagian 1. - 0xax https://translate.google.com/translate?u=https%3A%2F%2F0xax.gitbooks.io%2Flinux-insides%2Fcontent%2FSysCall%2Flinux-syscall-1.html&hl=id&sl=en&tl=id&client=srp
-[5] OS: Linux Kernel - OnnoWiki http://onnocenter.or.id/wiki/index.php/OS:_Linux_Kernel
-[6] apa itu kernel di Linux? https://translate.google.com/translate?u=https%3A%2F%2F1gbits.com%2Fblog%2Fwhat-is-linux-kernel%2F&hl=id&sl=en&tl=id&client=srp
-[7] Penjelasan Panggilan Sistem dalam Sistem Operasi https://translate.google.com/translate?u=https%3A%2F%2Fphoenixnap.com%2Fkb%2Fsystem-call&hl=id&sl=en&tl=id&client=srp
-[8] Kernel Linux: Fungsi Inti, Arsitektur, dan Kustomisasi - ARMO https://translate.google.com/translate?u=https%3A%2F%2Fwww.armosec.io%2Fglossary%2Flinux-kernel%2F&hl=id&sl=en&tl=id&client=srp
-[9] Implementasi Panggilan Sistem Kernel Linux https://translate.google.com/translate?u=https%3A%2F%2Fwww.baeldung.com%2Flinux%2Fkernel-system-call-implementation&hl=id&sl=en&tl=id&client=srp
-[10] syscalls(2) â€” halaman manual Linux https://translate.google.com/translate?u=https%3A%2F%2Fman7.org%2Flinux%2Fman-pages%2Fman2%2Fsyscalls.2.html&hl=id&sl=en&tl=id&client=srp  
-
 
 
 | Perintah | Opsi | Deskripsi | Hasil | Status | Catatan |
 |---------|------|-----------|-------|--------|---------|
-| pwd |  | Menerbitkan direktori kerja saat ini | /mnt/c/Users/ASUS GO 14 | sukses | - |
-| ls -l | -l | Menampilkan daftar isi dengan detail (izin, pemilik, ukuran, tanggal) | diflie code | - |  Format kolom: izin pemilik grup ukuran tanggal nama |
+| pwd | - | Menerbitkan direktori kerja saat ini | /mnt/c/Users/ASUS GO 14 | sukses | - |
+| ls -l | -l | Menampilkan daftar isi dengan detail (izin, pemilik, ukuran, tanggal) | di folder code | - |  Format kolom: izin pemilik grup ukuran tanggal nama |
 | cd /tmp | /tmp | Pindah ke direktori /tmp | - | sukses | Direktori sementara untuk file sementara |
-| ls -a | -a | Menampilkan semua file termasuk file tersembunyi |  | sukses | Termasuk . dan .. serta file tersembunyi lainnya |
+| ls -a | -a | Menampilkan semua file termasuk file tersembunyi | . ..percobaan.txt | sukses | Termasuk . dan .. serta file tersembunyi lainnya |
 | cat /etc/passwd | head -n 5 | Menampilkan 5 baris pertama dari passwd | difolder code | sukses | Contoh data akun sistem; sesuaikan jika sensitif |
-| echo "Hello <RAFI><250202961>" > percobaan.txt |  | Menulis string ke file percobaan.txt | tercatat difile | sukses | File baru atau pembaruan jika sudah ada |
-| ls -l percobaan.txt |  | Menampilkan detail file percobaan.txt | keluar code rwk | sukses | Verifikasi hak akses dan kepemilikan |
-| chmod 600 percobaan.txt |  | Mengatur izin file menjadi rw------- |  | gagal | Pemilik dapat baca/tulis; grup/others tidak memiliki hak |
-| ls -l percobaan.txt |  | Verifikasi izin setelah perubahan | hasil tetap sama | sukses | Contoh: -rw------- |
-| sudo chown root percobaan.txt |  | Mengubah kepemilikan file menjadi root | disuruh memasukan psword | tidak tau | Perubahan memerlukan hak sudo |
-| ls -l percobaan.txt |  | Verifikasi kepemilikan setelah perubahan | hasil tetap sama | sukses | Pemilik sekarang root |
+| echo "Hello <RAFI><250202961>" > percobaan.txt | - | Menulis string ke file percobaan.txt | tercatat difile | sukses | File baru atau pembaruan jika sudah ada |
+| ls -l percobaan.txt | - | Menampilkan detail file percobaan.txt | keluar code rwk | sukses | Verifikasi hak akses dan kepemilikan |
+| chmod 600 percobaan.txt | - | Mengatur izin file menjadi rw------- |  | gagal | Pemilik dapat baca/tulis; grup/others tidak memiliki hak |
+| ls -l percobaan.txt | - | Verifikasi izin setelah perubahan | hasil tetap sama | sukses | Contoh: -rw------- |
+| sudo chown root percobaan.txt | - | Mengubah kepemilikan file menjadi root | disuruh memasukan psword | tidak tau | Perubahan memerlukan hak sudo |
+| ls -l percobaan.txt | - | Verifikasi kepemilikan setelah perubahan | hasil tetap sama | sukses | Pemilik sekarang root |
+
+
+Jelaskan fungsi tiap perintah dan arti kolom permission (`rwxr-xr--`).
+
+
+Fungsi tiap perintah umum (dasar Linux)
+- pwd: menampilkan jalur direktori kerja saat ini. Penting untuk memahami konteks lokasi berkas saat menjalankan perintah lain.
+- ls -l: menampilkan daftar isi direktori dalam format panjang, termasuk izin (permissions), pemilik, grup, ukuran, dan waktu modifikasi. Menjadi dasar untuk menilai hak akses dan kepemilikan berkas.
+- cd <path>: mengganti direktori kerja. Mengubah konteks lingkungan kerja agar perintah berikutnya beroperasi pada lokasi yang tepat.
+- ls -a: menampilkan semua entri di direktori, termasuk berkas tersembunyi (yang diawali titik). Berguna untuk audit isi direktori secara menyeluruh.
+- cat <file> | head -n N: membaca isi file lalu menampilkan N baris pertama. Digunakan untuk melihat cuplikan data tanpa menampilkan seluruh konten.
+- echo "..." > <file>: menulis string ke berkas, dengan opsi menimpa isi jika file sudah ada. Berguna untuk membuat file baru atau memperbarui isian.
+- ls -l <file>: menampilkan detail berkas, termasuk hak akses dan kepemilikan. Digunakan untuk verifikasi izin dan kepemilikan.
+- chmod <mode> <file/directory>: mengubah izin akses berkas/direktori. Mengatur hak baca, tulis, eksekusi untuk pemilik, grup, dan lainnya.
+- sudo chown <owner>[:<group>] <path> (serta opsi -R): mengubah pemilik dan/atau grup kepemilikan berkas/direktori. Opsi -R menjadikan perubahan rekursif untuk isi direktori.
+- ls -l <file> lagi: verifikasi setelah perubahan izin atau kepemilikan.
+
+Arti kolom permission rwxr-xr--
+- Struktur tiga blok hak akses: untuk pemilik (user), kelompok (group), dan lainnya (others).
+- Setiap blok terdiri dari tiga karakter:
+  - r: read (baca)
+  - w: write (tulis)
+  - x: execute (eksekusi)
+- Contoh rwxr-xr--:
+  - Pemilik memiliki hak baca, tulis, dan eksekusi.
+  - Grup memiliki hak baca dan eksekusi, tanpa hak tulis.
+  - Lainnya hanya memiliki hak baca.
+- Tanda minus (-) menunjukkan hak tidak dimiliki pada posisi tersebut, misalnya -rw-r--r-- berarti pemilik bisa baca/tulis, grup bisa baca, others bisa baca.
+
+
+3. Analisis peran `chmod` dan `chown` dalam keamanan sistem Linux. 
+
+
+Fungsi chmod
+- Mengubah izin baca/tulis/eksekusi pada berkas/direktori untuk tiga pihak: pemilik (owner), grup (group), dan lainnya (others).
+- Tujuan keamanan: menerapkan prinsip least privilege dengan membatasi akses pengguna yang tidak berwenang.
+- Bentuk umumnya: simbolik (u/g/o) atau numerik (contoh 644, 755). Pengaturan yang tepat mencegah kebocoran data dan modifikasi tidak sah.
+- Contoh praktis: chmod 600 file hanya membolehkan pemilik membaca/menulis; chmod -R untuk perubahan rekursif pada direktori.
+
+Fungsi chown
+- Mengubah pemilik dan/atau grup berkas/direktori.
+- Dampak keamanan: menentukan siapa yang berhak mengatur atau memodifikasi berkas, terutama untuk berkas konfigurasi atau berkas layanan.
+- Praktik aman: gunakan hak akses minimum yang diperlukan; hindari mengubah kepemilikan secara broad tanpa kebutuhan operasional; gunakan rekursif dengan hati-hati.
 
 
 
+Sumber:
 
-
-
+Mengenal Apa Itu CHMOD? Pengertian dan Fungsinya https://idcloudhost.com/blog/mengenal-apa-itu-chmod-pengertian-dan-fungsinya/
+Cara mengganti permission Linux menggunakan chmod ... https://www.hostinger.com/id/tutorial/pengertian-chmod-dan-chown-untuk-permission-di-linux
+CHMOD: Pengertian, Fungsi, dan Perintahnya https://tutorial.idwebhost.com/chmod-pengertian-fungsi-dan-perintahnya/
+Tinjauan Umum tentang Memahami Chown dan Chmod di ... https://translate.google.com/translate?u=https%3A%2F%2Fwww.pythian.com%2Fblog%2Ftechnical-track%2Fan-overview-of-understanding-chown-and-chmod-in-linux&hl=id&sl=en&tl=id&client=srp
+Penjelasan Izin Berkas Linux: chmod, chown, umask https://translate.google.com/translate?u=https%3A%2F%2Fwww.strongdm.com%2Fblog%2Flinux-file-permissions&hl=id&sl=en&tl=id&client=srp
+Cara Mengatur Izin di Linux: Panduan untuk chmod dan ... https://translate.google.com/translate?u=https%3A%2F%2Fwww.digitalocean.com%2Fcommunity%2Ftutorials%2Fhow-to-set-permissions-linux&hl=id&sl=en&tl=id&client=srp
+Memahami Izin Linux: Perbedaan antara chmod dan chown https://translate.google.com/translate?u=https%3A%2F%2Flinuxconfig.org%2Funderstanding-linux-permissions-the-differences-between-chmod-and-chown&hl=id&sl=en&tl=id&client=srp
+Apa Itu Chown? Fungsi dan Cara Menggunakan Perintah ... https://www.exabytes.co.id/blog/apa-itu-chown-dan-perintah-chown-di-linux/
 
 ---
 
