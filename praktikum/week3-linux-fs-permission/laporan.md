@@ -32,7 +32,6 @@ Izin direpresentasikan secara simbolik (contoh: -rwxr-xr-- ) atau oktal (contoh:
 
 Ada hak istimewa khusus: SUID, SGID, sticky bit.ACL memungkinkan izin lebih granular selain tiga kategori dasar.
 
-Prinsip praktis: hindari 777 pada berkas sensitif; gunakan grup untuk manajemen akses; gunakan ACL bila perlu.
 ---
 
 ## Langkah Praktikum
