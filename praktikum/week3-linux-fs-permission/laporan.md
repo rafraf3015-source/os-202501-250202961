@@ -370,7 +370,12 @@ Apa Itu Chown? Fungsi dan Cara Menggunakan Perintah ... https://www.exabytes.co.
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
+
+sangat menantang bahkan saya malah kirim perintah chmod 777 untung perintah nya gagal
+
 - Bagaimana cara Anda mengatasinya?  
+
+berdiskusi dengan teman, belajar dari youtube, dan website
 
 ---
 
