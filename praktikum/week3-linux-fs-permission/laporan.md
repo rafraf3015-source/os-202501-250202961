@@ -196,11 +196,9 @@ Analisis Perubahan
 
 Ringkasnya dalam bentuk tabel izin sebelum dan sesudah chmod 600:
 
-| Pengguna   | Izin Sebelum (contoh) | Izin Setelah (chmod 600) |
+| perintah   | Sebelum  | Setelah (chmod 600) |
 |------------|-----------------------|--------------------------|
-| Pemilik    | Bisa baca dan tulis    | Bisa baca dan tulis       |
-| Grup       | Bisa baca             | Tidak ada izin           |
-| User lain  | Bisa baca             | Tidak ada izin           |
+| chmod 600    | -rw-r--r--    | -rw-------       |
 
 Jadi, perintah `chmod 600 percobaan.txt` mengubah akses file menjadi eksklusif milik pemilik file saja, meningkatkan privasi dan keamanan file tersebut dari akses pengguna lain 
 
@@ -267,8 +265,8 @@ Langkah lanjutan untuk laporan Anda
 | cat /etc/passwd | head -n 5 | Menampilkan 5 baris pertama dari passwd | difolder code | sukses | Contoh data akun sistem; sesuaikan jika sensitif |
 | echo "Hello <RAFI><250202961>" > percobaan.txt | - | Menulis string ke file percobaan.txt | tercatat difile | sukses | File baru atau pembaruan jika sudah ada |
 | ls -l percobaan.txt | - | Menampilkan detail file percobaan.txt | keluar code rwx | sukses | Verifikasi hak akses dan kepemilikan |
-| chmod 600 percobaan.txt | - | Mengatur izin file menjadi rw------- | dari rw--r--r jadi rw----- | sukses | Pemilik dapat baca/tulis; grup/others tidak memiliki hak |
-| ls -l percobaan.txt | - | Verifikasi izin setelah perubahan | hasil tetap sama | sukses | Contoh: -rw------- |
+| chmod 600 percobaan.txt | - | Mengatur izin file menjadi rw------- | dari -rw--r--r jadi -rw----- | sukses | Pemilik dapat baca/tulis; grup/others tidak memiliki hak |
+| ls -l percobaan.txt | - | Verifikasi izin setelah perubahan | hasil berubah | sukses | Contoh: -rw------- |
 | sudo chown root percobaan.txt | - | Mengubah kepemilikan file menjadi root | disuruh memasukan psword | tidak tau | Perubahan memerlukan hak sudo |
 | ls -l percobaan.txt | - | Verifikasi kepemilikan setelah perubahan | hasil tetap sama | sukses | Pemilik sekarang root |
 
