@@ -143,27 +143,6 @@ Kesimpulan
 - ls -a menampilkan semua isi termasuk file tersembunyi di /tmp.
 
 
-sumber:
-
-How to use the Linux pwd command https://www.ionos.com/digitalguide/server/configuration/linux-pwd-command/
-
-tugas 2 https://id.scribd.com/document/649818253/tugas-2
-
-Linux pwd Command Guide with Examples https://www.atlantic.net/dedicated-server-hosting/linux-pwd-command-guide-with-examples/
-M09_4312101110 https://id.scribd.com/document/549211003/M09-4312101110
-
-pwd Command https://www.ibm.com/docs/ssw_aix_72/p_commands/pwd.html
-
-AWALIA PUTRI LAODE https://mahasiswa.ung.ac.id/531423019/
-
-How to Display Current Working Directory in Linux | pwd ... https://www.geeksforgeeks.org/linux-unix/pwd-command-in-linux-with-examples/
-
-TUGAS KULIAH - AWALIA PUTRI LAODE - BLOG MAHASISWA https://mahasiswa.ung.ac.id/531423019/home/categories/5296/tugas-kuliah
-pwd and ls - High Performance Computing https://www.hpc.iastate.edu/guides/introduction-to-hpc-clusters/linux-commands-in-more-detail/pwd-and-ls
-
-Laporan Praktikum 3 Linux Esential Bagian 6, 7, 8 https://fr.scribd.com/document/425499248/
-Laporan-Praktikum-3-Linux-Esential-Bagian-6-7-8
-
 
 
 expwriment 2
@@ -288,7 +267,7 @@ Langkah lanjutan untuk laporan Anda
 | cat /etc/passwd | head -n 5 | Menampilkan 5 baris pertama dari passwd | difolder code | sukses | Contoh data akun sistem; sesuaikan jika sensitif |
 | echo "Hello <RAFI><250202961>" > percobaan.txt | - | Menulis string ke file percobaan.txt | tercatat difile | sukses | File baru atau pembaruan jika sudah ada |
 | ls -l percobaan.txt | - | Menampilkan detail file percobaan.txt | keluar code rwx | sukses | Verifikasi hak akses dan kepemilikan |
-| chmod 600 percobaan.txt | - | Mengatur izin file menjadi rw------- |  | berhasil | Pemilik dapat baca/tulis; grup/others tidak memiliki hak |
+| chmod 600 percobaan.txt | - | Mengatur izin file menjadi rw------- | dari rw--r--r jadi rw----- | sukses | Pemilik dapat baca/tulis; grup/others tidak memiliki hak |
 | ls -l percobaan.txt | - | Verifikasi izin setelah perubahan | hasil tetap sama | sukses | Contoh: -rw------- |
 | sudo chown root percobaan.txt | - | Mengubah kepemilikan file menjadi root | disuruh memasukan psword | tidak tau | Perubahan memerlukan hak sudo |
 | ls -l percobaan.txt | - | Verifikasi kepemilikan setelah perubahan | hasil tetap sama | sukses | Pemilik sekarang root |
