@@ -120,16 +120,16 @@ Experiment 1
 
 1. pwd
 - Perintah ini berfungsi menampilkan path lengkap dari direktori aktif saat ini, yang disebut sebagai print working directory.  
-- Hasilnya adalah menampilkan path penuh dari direktori tempat pengguna berada, misalnya /home/user/Documents [1][3].
+- Hasilnya adalah menampilkan path penuh dari direktori tempat pengguna berada, misalnya /home/user/Documents.
 
 2. ls -l*
-- Perintah ini menampilkan daftar isi dari direktori aktif dengan detail lengkap, termasuk izin akses, jumlah link, pemilik, grup, ukuran, dan waktu modifikasi terakhir dari file atau folder tersebut [2][4].
+- Perintah ini menampilkan daftar isi dari direktori aktif dengan detail lengkap, termasuk izin akses, jumlah link, pemilik, grup, ukuran, dan waktu modifikasi terakhir dari file atau folder tersebut.
 
 3. cd /tmp
-- Perintah ini mengubah direktori aktif ke /tmp, yaitu direktori temporer yang sering digunakan untuk menyimpan file sementara oleh sistem dan pengguna [4][6].
+- Perintah ini mengubah direktori aktif ke /tmp, yaitu direktori temporer yang sering digunakan untuk menyimpan file sementara oleh sistem dan pengguna .
 
 4. ls -a
-- Perintah ini menampilkan semua file dan folder di direktori /tmp, termasuk file tersembunyi yang namanya diawali titik (.), misalnya .bashrc atau .hiddenfile [4][5].
+- Perintah ini menampilkan semua file dan folder di direktori /tmp, termasuk file tersembunyi yang namanya diawali titik (.), misalnya .bashrc atau .hiddenfile.
 
 Catatan tentang direktori aktif, isi folder, dan file tersembunyi:
 - Setelah perintah pwd, direktori aktif akan berada di /tmp.
@@ -142,21 +142,18 @@ Kesimpulan
 - cd /tmp berpindah ke direktori /tmp.
 - ls -a menampilkan semua isi termasuk file tersembunyi di /tmp.
 
-Jika dilakukan perintah tersebut di Linux, maka:
-- Direktori aktif kemungkinan besar /home/username.
-- Setelah pindah ke /tmp, isi folder akan muncul lengkap, termasuk file tersembunyi jika ada.
 
-Kutipan:
-[1] How to use the Linux pwd command https://www.ionos.com/digitalguide/server/configuration/linux-pwd-command/
-[2] tugas 2 https://id.scribd.com/document/649818253/tugas-2
-[3] Linux pwd Command Guide with Examples https://www.atlantic.net/dedicated-server-hosting/linux-pwd-command-guide-with-examples/
-[4] M09_4312101110 https://id.scribd.com/document/549211003/M09-4312101110
-[5] pwd Command https://www.ibm.com/docs/ssw_aix_72/p_commands/pwd.html
-[6] AWALIA PUTRI LAODE https://mahasiswa.ung.ac.id/531423019/
-[7] How to Display Current Working Directory in Linux | pwd ... https://www.geeksforgeeks.org/linux-unix/pwd-command-in-linux-with-examples/
-[8] TUGAS KULIAH - AWALIA PUTRI LAODE - BLOG MAHASISWA https://mahasiswa.ung.ac.id/531423019/home/categories/5296/tugas-kuliah
-[9] pwd and ls - High Performance Computing https://www.hpc.iastate.edu/guides/introduction-to-hpc-clusters/linux-commands-in-more-detail/pwd-and-ls
-[10] Laporan Praktikum 3 Linux Esential Bagian 6, 7, 8 https://fr.scribd.com/document/425499248/Laporan-Praktikum-3-Linux-Esential-Bagian-6-7-8
+sumber:
+How to use the Linux pwd command https://www.ionos.com/digitalguide/server/configuration/linux-pwd-command/
+tugas 2 https://id.scribd.com/document/649818253/tugas-2
+Linux pwd Command Guide with Examples https://www.atlantic.net/dedicated-server-hosting/linux-pwd-command-guide-with-examples/
+M09_4312101110 https://id.scribd.com/document/549211003/M09-4312101110
+pwd Command https://www.ibm.com/docs/ssw_aix_72/p_commands/pwd.html
+AWALIA PUTRI LAODE https://mahasiswa.ung.ac.id/531423019/
+How to Display Current Working Directory in Linux | pwd ... https://www.geeksforgeeks.org/linux-unix/pwd-command-in-linux-with-examples/
+TUGAS KULIAH - AWALIA PUTRI LAODE - BLOG MAHASISWA https://mahasiswa.ung.ac.id/531423019/home/categories/5296/tugas-kuliah
+pwd and ls - High Performance Computing https://www.hpc.iastate.edu/guides/introduction-to-hpc-clusters/linux-commands-in-more-detail/pwd-and-ls
+Laporan Praktikum 3 Linux Esential Bagian 6, 7, 8 https://fr.scribd.com/document/425499248/Laporan-Praktikum-3-Linux-Esential-Bagian-6-7-8
 
 
 
@@ -176,7 +173,7 @@ Struktur tiap baris dalam file /etc/passwd adalah sebagai berikut:
 Contoh baris di /etc/passwd:
 
 root:x:0:0:root:/root:/bin/bash
-```
+
 Artinya:
 - User: root
 - Password di file shadow
