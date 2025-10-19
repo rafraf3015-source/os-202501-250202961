@@ -363,7 +363,7 @@ sangat menantang bahkan saya malah kirim perintah chmod 777 untung perintah nya 
 
 - Bagaimana cara Anda mengatasinya?  
 
-berdiskusi dengan teman, belajar dari youtube, dan website
+berdiskusi dengan teman, belajar dari youtube, dan website.
 
 ---
 
