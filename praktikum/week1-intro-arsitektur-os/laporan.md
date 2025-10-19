@@ -12,7 +12,7 @@ Topik: [Arsitektur Sistem Operasi]
 ---
 
 ## Tujuan
-mengenal kernel, mempelajari arsitektur dasar sistem operasi,mampu membuat diagram di draw.oi dan linux  
+mengenal kernel, mempelajari arsitektur dasar sistem operasi,mampu membuat diagram di draw.oi dan linux.  
 ---
 
 ## Dasar Teori

@@ -16,7 +16,7 @@ Keuntungan Mikro-Kernel
 3. Mudah untuk di-porting Micro-Kernel
 Mikro-Kernel lebih kecil kemungkinannya mengalami kesalahan dan bug. Salah satu contohnya adalah Mac OS.
 
-Kekurangan Mikro-Kernel
+Kekurangan Mikro-Kernel.
 
 1. Eksekusi Micro-Kernel lebih lambat.
 2. Hanya layanan yang paling penting saja yang ada di dalam kernel, sedangkan layanan sistem operasi lainnya ada di dalam program aplikasi sistem.
