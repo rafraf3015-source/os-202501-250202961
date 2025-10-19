@@ -12,7 +12,7 @@ Topik: [Struktur System Call dan Fungsi kernel]
 ---
 
 ## Tujuan
-> mengenal tentang system call, mempelajari mekanisme system call dan mampu mengunakan linux untuk menampilakn dan menganalisa system call
+> mengenal tentang system call, mempelajari mekanisme system call dan mampu mengunakan linux untuk menampilakn dan menganalisa system call.
 ---
 
 ## Dasar Teori

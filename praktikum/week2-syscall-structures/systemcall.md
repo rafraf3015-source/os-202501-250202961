@@ -55,4 +55,4 @@ https://translate.google.com/translate?u=https%3A%2F%2Fwww.theknowledgeacademy.c
 https://translate.google.com/translate?u=https%3A%2F%2Fwww.lenovo.com%2Fca%2Fen%2Fglossary%2Fwhat-is-system-call%2F&hl=id&sl=en&tl=id&client=srp
 https://translate.google.com/translate?u=https%3A%2F%2Fjumpcloud.com%2Fit-index%2Fwhat-is-a-system-call&hl=id&sl=en&tl=id&client=srp
 https://repository.unimal.ac.id/4073/1/BUKU%20sistem%20operasi%20PDF.pdf
-https://translate.google.com/translate?u=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FSystem_call&hl=id&sl=en&tl=id&client=srp
+https://translate.google.com/translate?u=https%3A%2F%2Fen.wikipedia.org%2Fwiki%2FSystem_call&hl=id&sl=en&tl=id&client=srp .
