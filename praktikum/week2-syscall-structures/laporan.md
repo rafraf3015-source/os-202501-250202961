@@ -26,6 +26,29 @@ Topik: [Struktur System Call dan Fungsi kernel]
 
 - Fungsi Sistem Operasi adalah Sistem operasi memiliki beberapa fungsi, seperti mengelola proses, mengelola memori, mengelola file, dan menyediakan layanan ke aplikasi.
 
+
+sumber:
+
+pengenalan system call 
+https://ubung-style.blogspot.com/2014/03/mengenal-system-call-dalam-sistem.html?m=1
+
+pengertian kernel
+https://www.geeksforgeeks.org/operating-systems/different-approaches-or-structures-of-operating-systems/
+
+https://it.telkomuniversity.ac.id/kernel-dan-perannya-dalam-kinerja-sebuah-os-operational-system/
+
+Sistem Operasi: Konsep Dasar dan Penerapan Modern https://penerbit.mifandimandiri.com/product/sistem-operasi/
+
+Konsep Dasar Sistem Operasi Dan Jenis Sistem Operasi https://id.scribd.com/document/684764618/08-Konsep-Dasar-Sistem-Operasi-Dan-Jenis-Sistem-Operasi
+
+BUKU AJAR SISTEM OPERASI ... https://repository.upy.ac.id/7118/1/11.%20BUKU%20AJAR%20SISTEM%20OPERASI%202018_compressed.pdf
+
+Sistem Operasi https://repository.unimal.ac.id/4073/1/BUKU%20sistem%20operasi%20PDF.pdf
+
+Konsep Sistem Operasi Menggunakan Shell Programming ... https://www.gramedia.com/products/konsep-sistem-operasi-menggunakan-shell-programming-berbasis
+
+
+
 ---
 
 ## Langkah Praktikum
