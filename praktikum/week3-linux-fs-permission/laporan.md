@@ -38,6 +38,19 @@ Tuliskan ringkasan teori (3–5 poin) yang mendasari percobaan.
 - Perhatikan perbedaan hak akses pada direktori vs file: pada direktori, hak execute berarti kemampuan menelusuri isi; pada file, execute berarti bisa menjalankan program jika sesuai .
 - Gunakan chown/chmod secara bertahap dan uji akses yang dibutuhkan sebelum menambah hak lebih lanjut .
 
+sumber:
+1. Memahami Hak Akses File Di Linux https://www.belajarlinux.org/memahami-advanced-files-permission-pada-linux/
+
+2. Mengenal Hak Akses File Pada Linux https://teltics.com/blog/mengenal-hak-akses-file-pada-linux
+
+3. Memahami Hak Akses File Pada Linux Dan Cara Merubah Nya https://www.tembolok.id/memahami-dan-mengatur-file-attribut-serta-hak-akses-pada-linux/
+
+4. Cara mengganti permission Linux menggunakan chmod ... https://www.hostinger.com/id/tutorial/pengertian-chmod-dan-chown-untuk-permission-di-linux
+
+5. File Permission Linux: Panduan Lengkap dari 000 Hingga ... https://www.cloudaja.id/artikel/file-permission-linux/
+
+6. Cara Mengatur Hak Akses & Kepemilikan File di Linux https://www.belajarlinux.org/memahami-dan-mengatur-hak-akses-serta-kepemilikan-file-folder-linux/
+
 ---
 
 ## Langkah Praktikum
