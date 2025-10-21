@@ -22,6 +22,31 @@ mengenal kernel, mempelajari arsitektur dasar sistem operasi,mampu membuat diagr
 - Arsitektur Sistem Operasi adalah Sistem operasi dapat memiliki beberapa model arsitektur, seperti monolithic kernel, microkernel, dan layered architecture.
 - Komponen Sistem Operasi adalah Sistem operasi memiliki beberapa komponen, seperti device driver, file system, dan process management, yang bekerja sama untuk mengelola sumber daya sistem dan menyediakan layanan ke aplikasi.
 
+Sumber:
+
+1. Struktur Sistem Operasi http://ferryas.lecturer.pens.ac.id/SO/Bab%202%20Struktur%20Sistem%20Operasi.pdf
+
+2. Kernel Dan Perannya Dalam Kinerja Sebuah OS ... https://it.telkomuniversity.ac.id/kernel-dan-perannya-dalam-kinerja-sebuah-os-operational-system/
+
+3. Makalah Implementasi System Call | PDF https://id.scribd.com/document/587361823/MAKALAH-IMPLEMENTASI-SYSTEM-CALL
+
+4. Arsitektur Sistem Operasi | PDF | Komputer https://pt.scribd.com/doc/251775925/ARSITEKTUR-SISTEM-OPERASI-docx
+
+5. KOMPONEN KOMPONEN SISTEM OPERASI https://diengcyber.com/komponen-komponen-sistem-operasi/
+
+6. Sistem Operasi: Manajemen Sumber Daya | PDF https://id.scribd.com/document/409027599/KELOMPOK-5
+
+7. Mengenal Fungsi Kernel Sistem Operasi https://www.domainesia.com/berita/kernel-sistem-operasi/
+
+8. Materi System Calls | PDF https://id.scribd.com/document/860216745/materi-system-calls
+
+9. Apa Itu Sistem Operasi dan Arsitektur Komputer https://course-net.com/blog/pengertian-sistem-operasi-dan-arsitektur-komputer/
+
+10. KOMPONEN DASAR SISTEM OPERASI https://mahasiswa.ung.ac.id/532423063/home/2023/10/20/komponen-dasar-sistem-operasi.html
+
+
+
+
 ## Langkah Praktikum
 1. install viscode,gitbash,ubuntu
 2. buat akun github
