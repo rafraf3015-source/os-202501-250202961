@@ -27,6 +27,7 @@ Tuliskan tujuan praktikum minggu ini.
 - Peran grup untuk manajemen hak akses: Grup memungkinkan menerapkan hak akses secara kolektif ke beberapa user tanpa menyetel izin satu per satu. Grup juga sering dipakai oleh layanan atau aplikasi (misalnya database/web server) untuk menjalankan layanan dengan hak akses yang sesuai.
 
 sumber:
+
 Manajemen User di Linux: Tips Aman yang Jarang Dipakai https://www.idn.id/manajemen-user-di-linux-tips-aman-yang-jarang-dipakai/
 
 Manajemen User Linux: Perintah Penting yang Wajib Tahu https://www.idn.id/manajemen-user-linux-perintah-penting-yang-wajib-tahu/
@@ -69,9 +70,9 @@ Praktikum 11 Manajemen User dan Group https://raniadwitry.blogspot.com/2020/12/p
    top -n 1
    ```
    - Jelaskan kolom penting seperti PID, USER, %CPU, %MEM, COMMAND.
+
      ```bash
-   sleep 1000 &
-     ps aux | grep sleep
+   sleep 1000 & ps aux | grep sleep
      ```
    - Catat PID proses `sleep`.  
    - Hentikan proses:
