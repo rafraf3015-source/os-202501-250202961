@@ -1,0 +1,130 @@
+rafraf3015@cloudshell:~$ whoami
+rafraf3015
+rafraf3015@cloudshell:~$ id
+uid=1000(rafraf3015) gid=1000(rafraf3015) groups=1000(rafraf3015),4(adm),27(sudo),996(docker)
+rafraf3015@cloudshell:~$ groups
+rafraf3015 adm sudo docker
+rafraf3015@cloudshell:~$ sudo adduser praktikan
+info: Adding user `praktikan' ...
+info: Selecting UID/GID from range 1000 to 59999 ...
+info: Adding new group `praktikan' (1001) ...
+info: Adding new user `praktikan' (1001) with group `praktikan (1001)' ...
+info: Creating home directory `/home/praktikan' ...
+info: Copying files from `/etc/skel' ...
+New password: 
+Retype new password: 
+passwd: password updated successfully
+Changing the user information for praktikan
+Enter the new value, or press ENTER for the default
+        Full Name []: rafi nurul fauzan
+top - 17:55:51 up 47 min,  0 user,  load average: 0.10, 0.19, 0.10
+Tasks:  31 total,   1 running,  30 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  4.5 us,  4.5 sy,  0.0 ni, 90.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7947.4 total,   4427.9 free,   2026.6 used,   1736.8 buff/cache     
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5920.8 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                
+      1 root      20   0    4324   3460   3184 S   0.0   0.0   0:00.05 bash                                                                                   
+     10 syslog    20   0  222140   3840   2484 S   0.0   0.0   0:00.02 rsyslogd                                                                               
+     26 root      20   0   40084  29124  10944 S   0.0   0.4   0:00.51 python                                                                                 
+     27 root      20   0    6196   2676   2432 S   0.0   0.0   0:00.00 logger                                                                                 
+     71 root      10 -10   12020   4148   3032 S   0.0   0.1   0:00.00 sshd                                                                                   
+    210 root      20   0 1972948  75120  54484 S   0.0   0.9   0:00.33 dockerd                                                                                
+    266 root      20   0 1803036  47792  35096 S   0.0   0.6   0:00.43 containerd                                                                             
+    268 root      20   0 1233352  12476   7620 S   0.0   0.2   0:00.29 editor-proxy                                                                           
+    270 root      20   0   16320   6408   5484 S   0.0   0.1   0:00.01 sudo                                                                                   
+    278 root      20   0 1226100   2684   1976 S   0.0   0.0   0:00.00 tmux-agent                                                                             
+    283 root      10 -10   13992   9776   8396 S   0.0   0.1   0:00.03 sshd                                                                                   
+    285 root      10 -10   13992   9764   8388 S   0.0   0.1   0:00.03 sshd                                                                                   
+    299 rafraf3+  10 -10   14252   6388   4728 S   0.0   0.1   0:00.00 sshd                                                                                   
+    332 rafraf3+  10 -10    7340   3704   3456 S   0.0   0.0   0:00.00 bash                                                                                   
+    339 rafraf3+  10 -10    7604   4548   3944 S   0.0   0.1   0:00.00 bash                                                                                   
+    341 rafraf3+  10 -10   14252   6424   4768 S   0.0   0.1   0:00.02 sshd                                                                                   
+    367 root      20   0    9196   4064   3684 S   0.0   0.0   0:00.00 runuser                                                                                
+    370 rafraf3+  20   0    4324   3376   3108 S   0.0   0.0   0:00.00 sh                                                                                     
+    380 rafraf3+  10 -10    7340   3764   3516 S   0.0   0.0   0:00.00 bash                                                                                   
+    382 rafraf3+  10 -10    7340   3688   3424 S   0.0   0.0   0:00.00 start-shell.sh                                                                         
+    383 rafraf3+  10 -10    6880   3400   3100 S   0.0   0.0   0:00.00 tmux                                                                                   
+    393 rafraf3+  10 -10    7148   2744   2156 S   0.0   0.0   0:00.01 tmux                                                                                   
+rafraf3015@cloudshell:~$ sleep 1000 &
+ ps aux | grep sleep
+[1] 1356
+root           1  0.0  0.0   4324  3460 ?        Ss   17:50   0:00 /bin/bash /google/scripts/onrun.sh sleep infinity
+root         681  0.0  0.0   2696  1532 ?        S    17:50   0:00 sleep infinity
+rafraf3+    1356  0.0  0.0   5688  2284 pts/2    S<   17:58   0:00 sleep 1000
+rafraf3+    1360  0.0  0.0   6548  2428 pts/2    S<+  17:58   0:00 grep --color=auto sleep
+rafraf3015@cloudshell:~$ kill <PID>
+-bash: syntax error near unexpected token `newline'
+rafraf3015@cloudshell:~$ pstree -p | head -20
+bash(1)-+-dockerd(210)-+-containerd(266)-+-{containerd}(272)
+        |              |                 |-{containerd}(275)
+        |              |                 |-{containerd}(276)
+        |              |                 |-{containerd}(277)
+        |              |                 |-{containerd}(287)
+        |              |                 |-{containerd}(290)
+        |              |                 `-{containerd}(291)
+        |              |-{dockerd}(216)
+        |              |-{dockerd}(217)
+top - 18:04:54 up 56 min,  0 user,  load average: 0.00, 0.03, 0.05
+Tasks:  32 total,   1 running,  31 sleeping,   0 stopped,   0 zombie
+%Cpu(s):  0.0 us,  4.5 sy,  0.0 ni, 95.5 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st 
+MiB Mem :   7947.4 total,   4436.9 free,   2016.3 used,   1738.7 buff/cache     
+MiB Swap:      0.0 total,      0.0 free,      0.0 used.   5931.1 avail Mem 
+
+    PID USER      PR  NI    VIRT    RES    SHR S  %CPU  %MEM     TIME+ COMMAND                                                                                
+      1 root      20   0    4324   3460   3184 S   0.0   0.0   0:00.05 bash                                                                                   
+     10 syslog    20   0  222140   3840   2484 S   0.0   0.0   0:00.02 rsyslogd                                                                               
+     26 root      20   0   40084  29124  10944 S   0.0   0.4   0:00.61 python                                                                                 
+     27 root      20   0    6196   2676   2432 S   0.0   0.0   0:00.00 logger                                                                                 
+     71 root      10 -10   12020   4148   3032 S   0.0   0.1   0:00.01 sshd                                                                                   
+    210 root      20   0 1972948  75060  54484 S   0.0   0.9   0:00.40 dockerd                                                                                
+    266 root      20   0 1803036  47796  35096 S   0.0   0.6   0:00.96 containerd                                                                             
+    268 root      20   0 1233352  12380   7620 S   0.0   0.2   0:00.43 editor-proxy                                                                           
+    270 root      20   0   16320   6408   5484 S   0.0   0.1   0:00.01 sudo                                                                                   
+    278 root      20   0 1226100   2684   1976 S   0.0   0.0   0:00.00 tmux-agent                                                                             
+    283 root      10 -10   13992   9776   8396 S   0.0   0.1   0:00.03 sshd                                                                                   
+    285 root      10 -10   13992   9764   8388 S   0.0   0.1   0:00.03 sshd                                                                                   
+    299 rafraf3+  10 -10   14252   6388   4728 S   0.0   0.1   0:00.00 sshd                                                                                   
+    332 rafraf3+  10 -10    7340   3704   3456 S   0.0   0.0   0:00.00 bash                                                                                   
+    339 rafraf3+  10 -10    7604   4548   3944 S   0.0   0.1   0:00.00 bash                                                                                   
+    341 rafraf3+  10 -10   14252   6424   4768 S   0.0   0.1   0:00.02 sshd                                                                                   
+    367 root      20   0    9196   4064   3684 S   0.0   0.0   0:00.00 runuser                                                                                
+    370 rafraf3+  20   0    4324   3376   3108 S   0.0   0.0   0:00.00 sh                                                                                     
+    380 rafraf3+  10 -10    7340   3764   3516 S   0.0   0.0   0:00.00 bash                                                                                   
+    382 rafraf3+  10 -10    7340   3688   3424 S   0.0   0.0   0:00.00 start-shell.sh                                                                         
+    383 rafraf3+  10 -10    6880   3400   3100 S   0.0   0.0   0:00.00 tmux                                                                                   
+    393 rafraf3+  10 -10    7280   2916   2156 S   0.0   0.0   0:00.03 tmux                                                                                   
+rafraf3015@cloudshell:~$ ps aux | head -10
+USER         PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root           1  0.0  0.0   4324  3460 ?        Ss   17:50   0:00 /bin/bash /google/scripts/onrun.sh sleep infinity
+syslog        10  0.0  0.0 222140  3840 ?        Ssl  17:50   0:00 /usr/sbin/rsyslogd
+root          26  0.0  0.3  40084 29124 ?        S    17:50   0:00 /usr/bin/python /usr/bin/supervisord -n -c /google/devshell/supervisord.conf --pidfile=/var/run/supervisor.pid --logfile=/var/log/supervisord.log
+root          27  0.0  0.0   6196  2676 ?        S    17:50   0:00 logger -t supervisord
+root          71  0.0  0.0  12020  4148 ?        S<s  17:50   0:00 sshd: /usr/sbin/sshd -p 22 -o AuthorizedKeysFile=/etc/ssh/keys/authorized_keys [listener] 0 of 10-60 startups
+root         210  0.0  0.9 1972948 75060 ?       Sl   17:50   0:00 /usr/bin/dockerd -p /var/run/docker.pid --mtu=1460 --registry-mirror=https://asia-mirror.gcr.io
+root         266  0.1  0.5 1803036 47796 ?       Ssl  17:50   0:01 containerd --config /var/run/docker/containerd/containerd.toml
+root         268  0.0  0.1 1233352 12380 ?       Sl   17:50   0:00 /google/devshell/editor/proxy/editor-proxy -static-content-dir=/google/devshell/editor/code-oss-for-cloud-shell/static-content -etag-file=/google/devshell/editor/proxy/code-oss-for-cloud-shell-etags.txt -editor-dir=/google/devshell/editor/code-oss-for-cloud-shell
+root         270  0.0  0.0  16320  6408 ?        S    17:50   0:00 sudo /google/devshell/tmux-agent
+rafraf3015@cloudshell:~$ ^C
+rafraf3015@cloudshell:~$ pstree -p | head -20
+bash(1)-+-dockerd(210)-+-containerd(266)-+-{containerd}(272)
+        |              |                 |-{containerd}(275)
+        |              |                 |-{containerd}(276)
+        |              |                 |-{containerd}(277)
+        |              |                 |-{containerd}(287)
+        |              |                 |-{containerd}(290)
+        |              |                 `-{containerd}(291)
+        |              |-{dockerd}(216)
+        |              |-{dockerd}(217)
+        |              |-{dockerd}(218)
+        |              |-{dockerd}(219)
+        |              |-{dockerd}(233)
+        |              |-{dockerd}(267)
+        |              |-{dockerd}(292)
+        |              |-{dockerd}(293)
+        |              `-{dockerd}(305)
+        |-logger(27)
+        |-python(26)-+-editor-proxy(268)-+-runuser(367)---sh(370)---node(397)-+-node(1209)-+-cloudcode_cli(1280)-+-{cloudcode_cli}(+
+        |            |                   |                                    |            |                     |-{cloudcode_cli}(+
+        |            |                   |                                    |            |                     |-{cloudcode_cli}(+
+rafraf3015@cloudshell:~$ 
