@@ -123,32 +123,112 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+Hasil percobaan
+
+ menunjukkan pengelolaan user dan proses di Linux yang sesuai dengan teori sistem operasi. Perintah seperti whoami, id, dan groups menampilkan identitas user dan hak akses berdasarkan UID, GID, dan grup, yang dikelola oleh kernel melalui system call untuk kontrol akses.
+
+hubungan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
+
+Proses baru dibuat dan dijalankan (mis. sleep 1000 &) dengan PID unik, membuktikan manajemen proses oleh kernel yang mengatur penjadwalan dan resource. Perintah kill <PID> mengirim sinyal untuk mengontrol proses, memperlihatkan interaksi user space dengan kernel.
+
+Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
+
+Perbedaan di Windows, meskipun ada konsep PID dan proses, manajemen user dan proses memakai model akses berbasis token dan antarmuka berbeda (Task Manager, PowerShell), dengan eskalasi hak yang diatur UAC, sedangkan Linux menggunakan sistem file permission dan grup.
+
+Singkatnya, percobaan menunjukkan kerja kernel dalam manajemen user dan proses, penggunaan system call untuk interaksi, dan perbedaan model keamanan antara Linux dan Windows. Semua ini menegaskan arsitektur OS yang memisahkan user space dan kernel space untuk keamanan dan stabilitas 
+
+
+TUGAS
+
+1. Dokumentasikan hasil semua perintah dan jelaskan fungsi tiap perintah.  
+
+| Perintah        | Fungsi                                                                                   |
+|-----------------|------------------------------------------------------------------------------------------|
+| whoami        | Menampilkan nama user yang sedang aktif di terminal.                                    |
+| id            | Menampilkan user ID (UID), group ID (GID), dan grup yang diikuti user tersebut.         |
+| groups        | Menampilkan daftar grup yang diikuti user saat ini.                                    |
+| sudo adduser  | Menambahkan user baru ke sistem (perlu hak sudo).                                       |
+| sudo passwd   | Mengubah password user baru.                                                            |
+| ps aux        | Menampilkan daftar semua proses yang berjalan pada sistem.                              |
+| top -n 1      | Menampilkan snapshot proses yang berjalan beserta penggunaan CPU dan memori.            |
+| sleep 1000 &  | Menjalankan proses sleep selama 1000 detik di background.                               |
+| kill <PID>    | Mengirim sinyal ke proses tertentu berdasarkan PID untuk mengontrol atau menghentikannya.|
+| pstree -p     | Menampilkan pohon hierarki proses yang berjalan beserta PID-nya.                        |
+
+
+
+2. Gambarkan hierarki proses dalam bentuk diagram pohon (`pstree`) di laporan.  
+
+Gambaran pohon proses dari hasil pstree -p | head -20 yang menunjukkan hubungan induk-anak proses, dimana bash(1) adalah root shell dan memiliki beberapa proses daemon seperti dockerd dan proses anak lainnya yang aktif.
+
+
+bash(1)-+-dockerd(208)-+-containerd(235)-+-{containerd}(251)
+        |              |                 |-{containerd}(252)
+        |              |                 |-{containerd}(253)
+        |              |                 |-{containerd}(254)
+        |              |                 |-{containerd}(259)
+        |              |                 |-{containerd}(260)
+        |              |                 `-{containerd}(263)
+        |              |-{dockerd}(214)
+        |              |-{dockerd}(215)
+        |              |-{dockerd}(216)
+        |              |-{dockerd}(217)
+        |              |-{dockerd}(231)
+        |              |-{dockerd}(233)
+        |              |-{dockerd}(265)
+        |              |-{dockerd}(264)
+        |              `-{dockerd}(442)
+        |-logger(27)
+        |-python(26)-+-editor-proxy(245)-+-runuser(474)---sh(475)---node(488) ...
+
+
+
+3. Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
+
+Manajemen user mengatur siapa yang dapat mengakses sistem dan menjalankan perintah tertentu melalui konsep UID, GID, dan grup. Hak akses ini membatasi operasi yang boleh dilakukan agar tidak sembarangan user bisa melakukan tindakan berbahaya.  
+Penggunaan grup dan sudo untuk eskalasi hak memungkinkan audit dan kontrol yang baik untuk menjaga keamanan sistem, meminimalisir risiko akses tidak sah, serta menjaga stabilitas sistem dengan membatasi hak administratif pada user tertentu saja.
+
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+- Proses init atau systemd adalah proses pertama yang dijalankan kernel Linux saat booting. init adalah versi lama yang menjalankan layanan secara berurutan, sedangkan systemd adalah versi modern yang menjalankan layanan secara paralel untuk efisiensi dan manajemen layanan yang lebih baik.
+
+- Perintah kill digunakan untuk mengirim sinyal ke proses berdasarkan PID, sedangkan killall mengirim sinyal ke semua proses dengan nama tertentu. kill lebih spesifik, killall lebih praktis untuk menghentikan banyak proses sekaligus.
+
+- User root memiliki hak istimewa karena memiliki kontrol penuh atas seluruh sistem, termasuk konfigurasi, manajemen layanan, dan pengaturan keamanan. Hak ini diperlukan untuk administrasi sistem, tapi harus digunakan dengan hati-hati.
+
+- Manajemen user dan grup pada Linux terkait erat dengan keamanan karena menentukan hak akses dan kontrol terhadap sumber daya sistem, sehingga membatasi operasi yang dapat dilakukan oleh pengguna sesuai dengan kebijakan keamanan.
+
+- Saat kill PID gagal, kemungkinan karena proses tersebut tidak merespon sinyal biasa, proses milik user lain, atau proses dalam status khusus. Menggunakan sinyal paksa (kill -9) dan sudo bisa membantu, namun untuk proses dalam status uninterruptible sleep perlu penanganan khusus.
+
+- Perintah-perintah praktikum seperti whoami, id, groups, ps aux, top, kill, dan pstree membantu memahami manajemen proses dan user, serta memantau dan mengendalikan proses yang berjalan dalam sistem Linux secara efektif.
 
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Apa fungsi dari proses `init` atau `systemd` dalam sistem Linux?]  
+- Init: proses induk pertama yang dijalankan kernel saat boot. Ia membentuk pohon proses dan meminang layanan inti secara berurutan pada sistem yang lebih lama.
+
+- systemd: versi modern dari init yang mengelola booting paralel, unit layanan, dependensi antar layanan, pemantauan proses, logging, dan banyak fitur manajemen sistem lainnya. Intinya, mengorkestrasi startup, pengelolaan layanan, dan menjaga sistem tetap berjalan. 
+
+2. [Apa perbedaan antara `kill` dan `killall`? ]  
+- kill: mengirimkan sinyal ke satu proses berdasarkan PID.
+
+- killall: mengirimkan sinyal ke semua proses yang memiliki nama sama (bisa juga dibatasi lewat opsi seperti -u untuk user). Root bisa menghentikan proses milik siapa saja; pengguna biasa hanya bisa menghentikan proses milik dirinya sendiri (kecuali memakai hak istimewa).
+
+3. [Mengapa user `root` memiliki hak istimewa di sistem Linux?]  
+Root memiliki kendali penuh atas sistem: bisa membaca/mengubah file sistem, mengelola layanan, mengubah konfigurasi keamanan, dan melakukan tindakan yang berpotensi merusak kalau salah. Hak istimewa ini diperlukan untuk administrasi, perbaikan masalah, dan pemulihan sistem. Karena tingkat aksesnya tinggi, tindakan root harus dilakukan dengan kehati-hatian dan diaudit.
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
+- Apa bagian yang paling menantang minggu ini? 
+mengerikan krna bisa merusak sistem laptop 
 - Bagaimana cara Anda mengatasinya?  
-
+krna berpotensi mnegerikan saya mengunakan shellcloud yang lebih aman
 ---
 
 **Credit:**  
