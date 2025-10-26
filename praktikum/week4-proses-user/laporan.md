@@ -138,6 +138,53 @@ Perbedaan di Windows, meskipun ada konsep PID dan proses, manajemen user dan pro
 Singkatnya, percobaan menunjukkan kerja kernel dalam manajemen user dan proses, penggunaan system call untuk interaksi, dan perbedaan model keamanan antara Linux dan Windows. Semua ini menegaskan arsitektur OS yang memisahkan user space dan kernel space untuk keamanan dan stabilitas 
 
 
+
+Eksperimen 1 – Identitas User
+
+1. Perintah `whoami`: Menampilkan username dari user yang sedang login dan aktif menjalankan shell.
+2. Perintah `id`: Menampilkan informasi user yang sedang aktif, termasuk user ID (uid), group ID (gid), dan grup-grup yang diikuti.
+3. Perintah `groups`: Menampilkan daftar grup yang user saat ini ikuti.
+
+Fungsi output:
+- `whoami`: Mengetahui user yang aktif.
+- `id`: Mengetahui detail identitas user dan grup.
+- `groups`: Melihat grup yang user menjadi anggotanya.
+
+Selanjutnya, buat user baru `praktikan` dengan `sudo adduser praktikan` dan set password dengan `sudo passwd praktikan`. Uji login ke user `praktikan` untuk memastikan user berhasil dibuat dan dapat digunakan.
+
+Eksperimen 2 – Monitoring Proses
+
+1. `ps aux | head -10`: Menampilkan 10 baris pertama dari daftar proses yang berjalan di sistem.
+2. `top -n 1`: Menampilkan snapshot status proses dan penggunaan sumber daya sistem (CPU, memori).
+
+Kolom penting:
+- `PID`: Process ID proses.
+- `USER`: User pemilik proses.
+- `%CPU`: Persentase penggunaan CPU oleh proses.
+- `%MEM`: Persentase penggunaan memori oleh proses.
+- `COMMAND`: Nama atau perintah yang menjalankan proses.
+
+
+Eksperimen 3 – Kontrol Proses
+
+1. Menjalankan perintah di background `sleep 1000 &` yang menjalankan proses tidur selama 1000 detik.
+2. Gunakan `ps aux | grep sleep` untuk mendapatkan PID proses `sleep`.
+3. Hentikan proses dengan perintah `kill <PID>` menggantikan `<PID>` dengan PID proses yang didapat.
+4. Pastikan proses berhenti dengan menjalankan ulang `ps aux | grep sleep`.
+
+ Eksperimen 4 – Analisis Hierarki Proses
+
+Jalankan perintah `pstree -p | head -20` untuk melihat struktur hierarki 20 proses pertama sebagai pohon proses.
+
+- Root dari proses biasanya adalah `init` atau `systemd`.
+- Setiap proses bisa memiliki anak proses yang ditampilkan sebagai cabang di bawah induk.
+- Perintah ini memudahkan pemahaman hubungan induk-anak dari proses-proses berjalan di sistem.
+
+
+Dengan langkah ini Anda dapat membuat laporan lengkap tentang user, monitoring proses, kontrol proses, dan analisis hierarki proses. Jangan lupa melakukan `git add .`, `git commit -m "Minggu 4 - Manajemen Proses & User"`, dan `git push origin main` sesuai instruksi.
+
+
+
 TUGAS
 
 1. Dokumentasikan hasil semua perintah dan jelaskan fungsi tiap perintah.  
