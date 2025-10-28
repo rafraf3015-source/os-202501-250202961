@@ -208,6 +208,7 @@ TUGAS
 
 Gambaran pohon proses dari hasil pstree -p | head -20 yang menunjukkan hubungan induk-anak proses, dimana bash(1) adalah root shell dan memiliki beberapa proses daemon seperti dockerd dan proses anak lainnya yang aktif.
 
+```bash
 
 bash(1)-+-dockerd(208)-+-containerd(235)-+-{containerd}(251)
         |              |                 |-{containerd}(252)
@@ -228,6 +229,7 @@ bash(1)-+-dockerd(208)-+-containerd(235)-+-{containerd}(251)
         |-logger(27)
         |-python(26)-+-editor-proxy(245)-+-runuser(474)---sh(475)---node(488) ...
 
+```
 
 
 3. Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
