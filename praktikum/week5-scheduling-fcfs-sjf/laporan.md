@@ -160,7 +160,7 @@ Perbedaan hasil di lingkungan OS seperti Linux dan Windows dapat muncul karena p
   - Waktu 0: P1 (6) → eksekusi 0-6  
   - Waktu 6: P2, P3, P4 sudah tersedia; pilih P4 (3) → eksekusi 6-9  
   - Waktu 9: P2 (8) dan P3 (7); pilih P3 (7) → eksekusi 9-16  
-  - Waktu 16: P2 (8) akhir → eksekusi 16-24  
+  - Waktu 16: P2 (8) akhir → eksekusi 16-24.
 
 - Gantt Chart: 
 ```bash
