@@ -103,9 +103,7 @@ Tuliskan tujuan praktikum minggu ini.
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
 ```bash
-uname -a
-lsmod | head
-dmesg | head
+Belajar menghitung FCFS dan SJF
 ```
 
 ---
@@ -113,7 +111,7 @@ dmesg | head
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/example.png)
-
+![Screenshot hasil](screenshots/Screenshot%202025-11-02%20195855.png)
 ---
 
 ## Analisis
@@ -138,8 +136,11 @@ Perbedaan hasil di lingkungan OS seperti Linux dan Windows dapat muncul karena p
 2. First Come First Served (FCFS)
 
 - Urutkan berdasarkan Arrival Time: P1, P2, P3, P4  
-- Gantt Chart: | P1 | P2 | P3 | P4 |  
-  Waktu: 0    6    14   21   24  
+- Gantt Chart:
+```bash
+ | P1 | P2 | P3 | P4 |  
+ 0    6    14   21   24  
+ ```
 
 | Proses | Arrival | Burst | Start | Waiting Time (WT) | Turnaround Time (TAT) |  
 |--------|---------|-------|-------|-------------------|-----------------------|  
@@ -161,8 +162,11 @@ Perbedaan hasil di lingkungan OS seperti Linux dan Windows dapat muncul karena p
   - Waktu 9: P2 (8) dan P3 (7); pilih P3 (7) → eksekusi 9-16  
   - Waktu 16: P2 (8) akhir → eksekusi 16-24  
 
-- Gantt Chart: | P1 | P4 | P3 | P2 |   
-  Waktu: 0    6    9    16   24  
+- Gantt Chart: 
+```bash
+  | P1 | P4 | P3 | P2 |   
+  0    6    9    16   24  
+  ```
 
 | Proses | Arrival | Burst | Start | WT = Start - Arrival | TAT = WT + Burst |  
 |--------|---------|-------|-------|----------------------|------------------|  
