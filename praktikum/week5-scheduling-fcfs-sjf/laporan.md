@@ -111,7 +111,7 @@ Belajar menghitung FCFS dan SJF
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/example.png)
-![Screenshot hasil](screenshots/Screenshot%202025-11-02%20195855.png)
+![Screenshot hasil](screenshots/Screenshot%202025-11-02%201958555.png)
 ---
 
 ## Analisis
