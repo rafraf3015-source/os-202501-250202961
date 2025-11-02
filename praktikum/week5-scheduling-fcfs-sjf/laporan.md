@@ -292,7 +292,7 @@ Kesimpulan ini sesuai dengan teori dasar pengelolaan sumber daya oleh kernel OS 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
-belum sih
+memahami dan belajar
 - Bagaimana cara Anda mengatasinya?  
 tetap mengerjakan tugas dengan tepat waktu.
 
