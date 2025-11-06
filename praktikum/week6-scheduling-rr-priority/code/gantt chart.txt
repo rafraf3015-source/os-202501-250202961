@@ -1,0 +1,9 @@
+Round Robin (Quantum=3):
+
+| P1 | P2 | P3 | P4 | P1 | P3 | P4 | P3 |  
+0    3    6    9   12   14   17   20   22  
+
+Priority Scheduling (Non-Preemptive):
+
+| P1 | P2 | P4 | P3 |  
+0    5    8   14   22  

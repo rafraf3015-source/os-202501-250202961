@@ -125,6 +125,7 @@ Tuliskan potongan kode atau perintah utama:
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/Screenshot%202025-11-06%20205324.png)
 
 ---
 
@@ -289,20 +290,25 @@ Priority Scheduling (Non-Preemptive):
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Apa perbedaan utama antara Round Robin dan Priority Scheduling?] 
+
+   Round Robin (RR) memberikan waktu CPU secara bergilir kepada semua proses dengan interval waktu tetap (quantum), sehingga semua proses mendapat kesempatan eksekusi secara adil tanpa memprioritaskan proses tertentu. Sedangkan Priority Scheduling memberikan CPU berdasarkan prioritas proses, dimana proses dengan prioritas lebih tinggi (nilai prioritas lebih kecil) dieksekusi lebih dulu, yang berarti proses dengan prioritas rendah harus menunggu lebih lama.
+
+2. [Apa pengaruh besar/kecilnya time quantum terhadap performa sistem?]
+
+   Time quantum yang kecil menyebabkan proses lebih sering bergantian (context switch terjadi lebih sering), sehingga overhead CPU untuk switching tinggi dan performa bisa menurun. Sedangkan time quantum yang besar mengurangi frekuensi context switch, tapi menyebabkan proses lama mendapatkan CPU selama waktu lama sehingga proses lain harus menunggu, membuat respons sistem menurun dan berperilaku seperti First-Come-First-Served (FCFS). 
+
+3. [Mengapa algoritma Priority dapat menyebabkan starvation?]  
+   Pada Priority Scheduling, proses dengan prioritas rendah dapat terus-menerus menunggu jika ada banyak proses dengan prioritas lebih tinggi yang terus masuk dan dieksekusi, sehingga proses prioritas rendah tersebut berpotensi tidak pernah mendapatkan kesempatan eksekusi, keadaan ini dikenal sebagai starvation atau indefinite blocking.
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
 - Apa bagian yang paling menantang minggu ini?  
+memahami cara menghitung Round robin (bergilir) dan Priority Scheduling(berdasarkan nilai prioritas)
 - Bagaimana cara Anda mengatasinya?  
-
+belajar memahami dan mencari cara menghitungnya di internet
 ---
 
 **Credit:**  
