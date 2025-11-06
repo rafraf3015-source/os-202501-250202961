@@ -6,8 +6,8 @@ Topik: [Penjadwalan CPU – FCFS dan SJF]
 
 ## Identitas
 - **Nama**  : [Rafi nurul fauzan]  
-- **NIM**   : [NIM Mahasiswa]  
-- **Kelas** : [250202961]
+- **NIM**   : [250202961]  
+- **Kelas** : [1IKRB]
 
 ---
 
