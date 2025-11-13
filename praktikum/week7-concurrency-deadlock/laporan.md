@@ -170,9 +170,13 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Analisis
 
+
 Ketua          : Andri Dwi Yuliyanto (250202976)
+
 Implementasi   : Andri Dwi Yuliyanto (250202976)
+
 Analisis       : Rafi Nurul Fauzan (250202961)
+
 Dokumentasi    : Muhammad Fajri Abdullah (250202979)
 
 
