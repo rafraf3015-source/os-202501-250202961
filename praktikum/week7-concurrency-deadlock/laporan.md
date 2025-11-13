@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Tuliskan judul topik, misalnya "Arsitektur Sistem Operasi dan Kernel"]
+Topik: [Sinkronisasi Proses dan Masalah Deadlock]
 
 ---
 
@@ -175,7 +175,8 @@ Implementasi   : Andri Dwi Yuliyanto (250202976)
 Analisis       : Rafi Nurul Fauzan (250202961)
 Dokumentasi    : Muhammad Fajri Abdullah (250202979)
 
-1. Analisis Versi Deadlock dan Versi Fixed Dining Philosophers
+
+Analisis Versi Deadlock dan Versi Fixed Dining Philosophers
 
 Versi Deadlock
 
