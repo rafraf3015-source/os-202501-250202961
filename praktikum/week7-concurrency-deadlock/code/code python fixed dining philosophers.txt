@@ -1,0 +1,43 @@
+import threading
+import time
+
+N = 5  # jumlah filosof (1 sampai 5)
+forks = [threading.Semaphore(1) for _ in range(N)]
+max_dining = threading.Semaphore(N - 1)  # maksimal 4 filosof makan bersamaan
+
+def philosopher(i):
+    name = f"Filosof {i+1}"  # tampilkan Filosof 1–5
+    while True:
+        print(f"{name} sedang berpikir...")
+        time.sleep(1)
+
+        max_dining.acquire()
+
+        if i == N - 1:
+            # Filosof terakhir (Filosof 5) ambil garpu kanan dulu
+            forks[(i + 1) % N].acquire()
+            forks[i].acquire()
+        else:
+            # Filosof lain ambil garpu kiri dulu
+            forks[i].acquire()
+            forks[(i + 1) % N].acquire()
+
+        print(f"{name} mulai makan...")
+        time.sleep(2)
+
+        # selesai makan, letakkan garpu
+        forks[i].release()
+        forks[(i + 1) % N].release()
+        max_dining.release()
+
+        print(f"{name} selesai makan.")
+
+# buat thread untuk setiap filosof
+threads = []
+for i in range(N):
+    t = threading.Thread(target=philosopher, args=(i,))
+    threads.append(t)
+    t.start()
+
+for t in threads:
+    t.join()

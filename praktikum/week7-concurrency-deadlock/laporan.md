@@ -114,46 +114,50 @@ Kutipan:
 ## Kode / Perintah
 Tuliskan potongan kode atau perintah utama:
 ```bash
+
 import threading
 import time
 
-NUM_PHILOSOPHERS = 4
-forks = [threading.Semaphore(1) for _ in range(NUM_PHILOSOPHERS)]
+N = 5  # jumlah filosof (1 sampai 5)
+forks = [threading.Semaphore(1) for _ in range(N)]
+max_dining = threading.Semaphore(N - 1)  # maksimal 4 filosof makan bersamaan
 
-def philosopher(i):  # i = 0 to 3
-    left = forks[i]
-    right = forks[(i + 1) % NUM_PHILOSOPHERS]
-    makan_count = 0
-
-    while makan_count < 3:
-        print(f"Filsuf {i + 1} sedang berpikir.")  # tampilkan sebagai 1–4
+def philosopher(i):
+    name = f"Filosof {i+1}"  # tampilkan Filosof 1–5
+    while True:
+        print(f"{name} sedang berpikir...")
         time.sleep(1)
 
-        print(f"Filsuf {i + 1} mencoba mengambil garpu kiri.")
-        left.acquire()
-        print(f"Filsuf {i + 1} mengambil garpu kiri.")
+        max_dining.acquire()
 
-        print(f"Filsuf {i + 1} mencoba mengambil garpu kanan.")
-        right.acquire()
-        print(f"Filsuf {i + 1} mengambil garpu kanan.")
+        if i == N - 1:
+            # Filosof terakhir (Filosof 5) ambil garpu kanan dulu
+            forks[(i + 1) % N].acquire()
+            forks[i].acquire()
+        else:
+            # Filosof lain ambil garpu kiri dulu
+            forks[i].acquire()
+            forks[(i + 1) % N].acquire()
 
-        print(f"Filsuf {i + 1} sedang makan.")
+        print(f"{name} mulai makan...")
         time.sleep(2)
-        makan_count += 1
 
-        print(f"Filsuf {i + 1} meletakkan garpu kanan.")
-        right.release()
-        print(f"Filsuf {i + 1} meletakkan garpu kiri.")
-        left.release()
+        # selesai makan, letakkan garpu
+        forks[i].release()
+        forks[(i + 1) % N].release()
+        max_dining.release()
 
-    print(f"Filsuf {i + 1} selesai makan sebanyak {makan_count} kali.")
+        print(f"{name} selesai makan.")
 
-# Jalankan filsuf 0–3 (tapi tampilkan sebagai 1–4)
+# buat thread untuk setiap filosof
 threads = []
-for i in range(NUM_PHILOSOPHERS):
+for i in range(N):
     t = threading.Thread(target=philosopher, args=(i,))
     threads.append(t)
     t.start()
+
+for t in threads:
+    t.join()
 
 ```
 
