@@ -190,6 +190,7 @@ SIMULASI PAGE REPLACEMENT (3 Frames)
 Reference String: [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
 
 === FIFO Page Replacement ===
+
 +-----+--------------------+-------+
 | Ref | Memory (3 frames) | Fault |
 +=====+====================+=======+
@@ -211,6 +212,7 @@ Reference String: [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
 Total Page Faults: 9
 
 === LRU Page Replacement ===
+
 +-----+--------------------+-------+
 | Ref | Memory (3 frames) | Fault |
 +=====+====================+=======+
@@ -232,6 +234,7 @@ Total Page Faults: 9
 Total Page Faults: 8
 
 === PERBANDINGAN ===
+
 +------------+-------------+------------+
 | Algoritma  | Page Faults | Fault Rate |
 +============+=============+============+
@@ -296,6 +299,7 @@ LRU superior secara performa (8 page faults vs FIFO 9) karena memanfaatkan tempo
 Simulasi validasi teori: LRU adaptif terhadap pola akses real-world, FIFO rentan suboptimal pada workload berulang.
 
 Page replacement krusial untuk virtual memory; algoritma cerdas seperti LRU tingkatkan hit ratio, kurangi disk I/O bottleneck.
+
 ---
 
 ## Quiz
