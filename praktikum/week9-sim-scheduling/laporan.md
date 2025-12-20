@@ -184,6 +184,7 @@ P4,3,3
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/hasil_simulasi.png)
 
 === SIMULASI PENJADWALAN CPU ===
 
