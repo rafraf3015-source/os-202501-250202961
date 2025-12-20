@@ -186,61 +186,61 @@ Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/example.png)
 ![Screenshot hasil](screenshots/hasil_simulasi.png)
 
-SIMULASI PAGE REPLACEMENT (3 Frames)
+SIMULASI PAGE REPLACEMENT
 Reference String: [7, 0, 1, 2, 0, 3, 0, 4, 2, 3, 0, 3, 2]
+Number of Frames: 3
+
 
 === FIFO Page Replacement ===
 
-+-----+--------------------+-------+
-| Ref | Memory (3 frames) | Fault |
-+=====+====================+=======+
-|  7  | 7                  | ✓     |
-|  0  | 7 0                | ✓     |
-|  1  | 7 0 1              | ✓     |
-|  2  | 0 1 2              | ✓     |
-|  0  | 0 1 2              | -     |
-|  3  | 1 2 3              | ✓     |
-|  0  | 2 3 0              | ✓     |
-|  4  | 3 0 4              | ✓     |
-|  2  | 0 4 2              | ✓     |
-|  3  | 4 2 3              | ✓     |
-|  0  | 2 3 0              | ✓     |
-|  3  | 3 0 2              | -     |
-|  2  | 0 2 3              | -     |
-+-----+--------------------+-------+
 
-Total Page Faults: 9
+Ref  | Memory (3 frames)  | Fault
+
+
+ 7   |                    |   ✓
+ 0   |         7          |   ✓
+ 1   |        7 0         |   ✓
+ 2   |       7 0 1        |   ✓
+ 0   |       0 1 2        |   -
+ 3   |       0 1 2        |   ✓
+ 0   |       1 2 3        |   ✓
+ 4   |       2 3 0        |   ✓
+ 2   |       3 0 4        |   ✓
+ 3   |       0 4 2        |   ✓
+ 0   |       4 2 3        |   ✓
+ 3   |       2 3 0        |   -
+ 2   |       2 3 0        |   -
+
+
+Total Page Faults: 10
 
 === LRU Page Replacement ===
 
-+-----+--------------------+-------+
-| Ref | Memory (3 frames) | Fault |
-+=====+====================+=======+
-|  7  | 7                  | ✓     |
-|  0  | 7 0                | ✓     |
-|  1  | 7 0 1              | ✓     |
-|  2  | 0 1 2              | ✓     |
-|  0  | 1 2 0              | -     |
-|  3  | 2 0 3              | ✓     |
-|  0  | 0 3 2              | -     |
-|  4  | 3 2 4              | ✓     |
-|  2  | 2 4 3              | -     |
-|  3  | 3 2 4              | -     |
-|  0  | 4 0 2              | ✓     |
-|  3  | 0 2 3              | ✓     |
-|  2  | 2 3 0              | -     |
-+-----+--------------------+-------+
 
-Total Page Faults: 8
+Ref  | Memory (3 frames)  | Fault
 
-=== PERBANDINGAN ===
+ 7   |                    |   ✓
+ 0   |         7          |   ✓
+ 1   |        7 0         |   ✓
+ 2   |       7 0 1        |   ✓
+ 0   |       0 1 2        |   -
+ 3   |       1 2 0        |   ✓
+ 0   |       2 0 3        |   -
+ 4   |       2 3 0        |   ✓
+ 2   |       3 0 4        |   ✓
+ 3   |       0 4 2        |   ✓
+ 0   |       4 2 3        |   ✓
+ 3   |       2 3 0        |   -
+ 2   |       2 0 3        |   -
 
-+------------+-------------+------------+
-| Algoritma  | Page Faults | Fault Rate |
-+============+=============+============+
-| FIFO       | 9           | 69.2%      |
-| LRU        | 8           | 61.5%      |
-+------------+-------------+------------+
+Total Page Faults: 9
+
+=== PERBANDINGAN ALGORITMA ===
+
+ Algoritma   | Page Faults  | Fault Rate
+
+    FIFO     |      10      | 76.9%
+    LRU      |      9       | 69.2%
 
 
 ---
