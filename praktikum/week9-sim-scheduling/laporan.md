@@ -188,6 +188,7 @@ Sertakan screenshot hasil percobaan atau diagram:
 === SIMULASI PENJADWALAN CPU ===
 
 1. FCFS (First Come First Served)
+
 | PID | AT | BT | ST  | CT  | WT  | TAT |
 |-----|----|----|-----|-----|-----|-----|
 | P1  |  0 |  6 |   0 |   6 |   0 |   6 |
@@ -197,6 +198,7 @@ Sertakan screenshot hasil percobaan atau diagram:
 | **Rata** |    |    |     |     | **8.75** | **14.75** |
 
 2. SJF Non-Preemptive
+
 | PID | AT | BT | ST  | CT  | WT  | TAT |
 |-----|----|----|-----|-----|-----|-----|
 | P1  |  0 |  6 |   0 |   6 |   0 |   6 |
@@ -219,6 +221,7 @@ Program mengikuti siklus standar simulasi CPU scheduling:
 - Output: Hitung WT = TAT - Burst, TAT = Completion - Arrival, tampilkan tabel dengan rata-rata[3]
 
 2. Perbandingan Hasil Simulasi vs Manual
+
 | Metrik | FCFS Manual | FCFS Simulasi | SJF Manual | SJF Simulasi |
 |--------|-------------|---------------|------------|--------------|
 | Avg Waiting Time| 8.75 | 8.75 ✓ | 6.25 | 6.25 ✓ |
