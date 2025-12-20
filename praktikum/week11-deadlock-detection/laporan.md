@@ -261,13 +261,13 @@ Resources R1,R2,R3 hanya bisa dipakai 1 proses (P1-R1, P2-R2, P3-R3)
 
 Hold and Wait 
 Setiap proses pegang 1 resource sambil tunggu resource lain:
-
+```bash
 P1: Hold R1, Wait R2
 
 P2: Hold R2, Wait R3
 
 P3: Hold R3, Wait R1
-
+```
 No Preemption 
 Resource tidak bisa direbut paksa. P1 tidak bisa ambil R2 dari P2, dst.
 
@@ -277,10 +277,12 @@ Rantai tunggu melingkar: P1→R2→P2→R3→P3→R1→P1
 Jika 1 syarat saja tidak terpenuhi → NO DEADLOCK. Di kasus ini semua terpenuhi → DEADLOCK!
 
 Visualisasi Resource Allocation Graph
-text
+```bash
 ○P1 ──→ □R1 ◄── ○P3 ──→ □R3 ◄── ○P2 ──→ □R2 ◄── ○P1
   ↑                                                    │
-  └──────────── CIRCULAR WAIT (DEADLOCK) ─────────────┘
+  └──────────── CIRCULAR WAIT (DEADLOCK) ─────────────┘ 
+
+  ```
 Kesimpulan: Sistem deadlock karena 4 syarat Coffman lengkap. Deteksi via cycle detection pada RAG berhasil identifikasi masalah.
 
 ---
@@ -306,10 +308,9 @@ Detection: Biarkan terjadi, lalu deteksi siklus di RAG/WFG secara periodik + rec
 
 2. [Mengapa deteksi deadlock tetap diperlukan dalam sistem operasi?]  
 Utilisasi resource tinggi: Prevention/avoidance batasi akses (low throughput), detection izinkan utilisasi maksimal.
-
 Sistem real-world kompleks: Impossible prediksi semua pola request → biarkan terjadi, deteksi + pulihkan.
-
 Recovery targeted: Kill 1-2 proses prioritas rendah daripada restart seluruh sistem. 
+
 3. [Apa kelebihan dan kekurangan pendekatan deteksi deadlock?]  
 
 Kelebihan:
