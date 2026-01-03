@@ -99,7 +99,6 @@ Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/proses%20penginstallan.png)
 ![Screenshot hasil](screenshots/install%20selesai.png)
 ![Screenshot hasil](screenshots/loding.png)
-![Screenshot hasil](screenshots/pembuatan%20akun.png)
 ![Screenshot hasil](screenshots/halaman.png)
 ![Screenshot hasil](screenshots/Resource.png)
 
