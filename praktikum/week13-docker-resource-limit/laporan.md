@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Docker – Resource Limit (CPU & Memori]
+Topik: [Docker – Resource Limit (CPU & Memori)]
 
 ---
 
@@ -114,35 +114,54 @@ Tuliskan potongan kode atau perintah utama:
 ## Hasil Eksekusi
 Sertakan screenshot hasil percobaan atau diagram:
 ![Screenshot hasil](screenshots/example.png)
+![Screenshot hasil](screenshots/bulid%20docker.png)
+![Screenshot hasil](screenshots/docker%20stats.png)
+![Screenshot hasil](screenshots/run%20cpu%20memory.png)
+![Screenshot hasil](screenshots/run%20docker.png)
 
 ---
 
 ## Analisis
-- Jelaskan makna hasil percobaan.  
-- Hubungkan hasil dengan teori (fungsi kernel, system call, arsitektur OS).  
-- Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?  
+
+| Aspek          | Tanpa Limit                          | Dengan Limit (--cpus=0.5 --memory=256m)          |
+|----------------|--------------------------------------|--------------------------------------------------|
+| CPU Test       | Selesai 60s normal (~100% CPU host)  | Lambat >120s (throttled ~50% CPU) [docker stats] |
+| Memory Test    | Selesai 400MB OK                     | Crash ~250MB ("❌ MEMORY LIMIT!") OOM killer      |
+| docker stats   | CPU 100%+, MEM unlimited             | CPU ~50%, MEM 256MiB/256MiB (100% lalu crash)    |
+| Perilaku       | Full resource host                   | Terbatas, aman multi-container                   |
+
+
 
 ---
 
 ## Kesimpulan
-Tuliskan 2–3 poin kesimpulan dari praktikum ini.
+
+Docker memungkinkan pengaturan batas CPU dan memori container agar tidak mengganggu sistem host atau container lain. Tanpa limit, container bebas pakai semua resource; dengan limit aktif, CPU dibatasi dan memori diblokir saat mencapai batas. Praktikum membuktikan Docker efektif mengisolasi resource untuk lingkungan multi-container yang stabil dan aman.
+
+CPU Fairness - CFS quota batasi container seperti proses biasa, cegah dominasi core
+
+Memory Safety - Hard limit + OOM killer proteksi host dari leak tak terkendali
+
+Production Ready - Wajib untuk multi-tenant, hilangkan Noisy Neighbor problem
 
 ---
 
 ## Quiz
-1. [Pertanyaan 1]  
-   **Jawaban:**  
-2. [Pertanyaan 2]  
-   **Jawaban:**  
-3. [Pertanyaan 3]  
-   **Jawaban:**  
+1. [Mengapa container perlu dibatasi CPU dan memori?]  
+   Jawaban: Container perlu dibatasi untuk mencegah Noisy Neighbor problem - satu container boros resource bisa ganggu container lain dan host. Tanpa limit, container bisa pakai 100% CPU host (bottleneck semua aplikasi) dan memori unlimited (swap habis → crash sistem). Limit jamin fairness dan stabilitas multi-container environment.
+
+2. [Apa perbedaan VM dan container dalam konteks isolasi resource?]  
+   Jawaban: VM punya Guest OS terpisah dengan hypervisor yang alokasi resource statis (overhead tinggi 10-20%, boot lambat). Container share host kernel dengan isolasi process-level via cgroups+namespace (overhead <5%, boot detik). Container lebih efisien tapi butuh cgroups untuk batasi resource karena tidak ada OS boundary alami.
+
+3. [Apa dampak limit memori terhadap aplikasi yang boros memori?]  
+   Jawaban: Aplikasi coba alokasi melebihi --memory="256m" → OOM Killer potong paksa → container crash dengan MemoryError. Efeknya predictable (batas jelas) bukan host crash chaotic. Docker proaktif bunuh proses boros sebelum host kehabisan RAM, lindungi sistem keseluruhan.
 
 ---
 
 ## Refleksi Diri
 Tuliskan secara singkat:
-- Apa bagian yang paling menantang minggu ini?  
-- Bagaimana cara Anda mengatasinya?  
+- Apa bagian yang paling menantang minggu ini?  memahami materi baru yang belum di ajarkan yaitu docker 
+- Bagaimana cara Anda mengatasinya? mencari tutorial di youtube atau minta bantuan teman
 
 ---
 
