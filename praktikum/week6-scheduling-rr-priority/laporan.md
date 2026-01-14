@@ -131,17 +131,6 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Analisis
 
-1. Makna Hasil Percobaan
-Hasil percobaan menunjukkan bagaimana algoritma penjadwalan CPU memengaruhi waktu tunggu (waiting time) dan waktu penyelesaian (turnaround time) proses. Round Robin (RR) dengan quantum tertentu memberikan distribusi waktu CPU yang lebih adil untuk semua proses, cocok untuk sistem interaktif yang membutuhkan respons waktu cepat meski dengan overhead context switching. Priority Scheduling lebih mengutamakan proses penting sehingga bisa lebih efisien tapi berisiko starvation untuk prioritas rendah. Variasi parameter seperti quantum dalam RR secara langsung memengaruhi efisiensi dan fairness pemakaian CPU.
-
-2. Hubungan dengan Fungsi Kernel, System Call, dan Arsitektur OS
-Penjadwalan CPU adalah fungsi inti kernel OS yang mengelola sumber daya CPU, memutuskan proses mana yang berhak menggunakan CPU saat ini. Kernel menerima interrupt timer untuk preemption (khusus RR), melakukan context switch antar proses menggunakan mekanisme system call dan trap, serta memperbarui status proses di data struktur kernel seperti run queue. Arsitektur OS, baik monolitik seperti Linux maupun hybrid seperti Windows, menyediakan mekanisme untuk memastikan penjadwalan berjalan efisien dan aman melalui manajemen mode user/kernel, prioritas proses, dan interrupt handling. Algoritma penjadwalan diimplementasikan sebagai bagian dari kernel scheduler yang mengeksekusi kebijakan yang telah ditentukan.
-
-3. Perbedaan Hasil di Lingkungan OS Berbeda (Linux vs Windows)
-- *Linux* menggunakan Completely Fair Scheduler (CFS) yang membagi waktu CPU secara adil dan proporsional sesuai bobot prioritas dinamis. CFS mengoptimasi penggunaan CPU untuk multitasking dengan minimal starvation dan penyesuaian timeslice otomatis sehingga cocok untuk server dan workstation. Linux juga mendukung real-time scheduling untuk tugas prioritas tinggi.
-- *Windows* mengandalkan Multi-Level Feedback Queue (MLFQ) dengan preemptive scheduling berbasis prioritas yang dinamis dan round-robin di setiap tingkatan. Windows mengutamakan responsivitas aplikasi GUI dan interaksi user, dengan mekanisme boost prioritas dan aging untuk mencegah starvation. Penjadwalan Windows lebih dioptimalkan untuk kestabilan sistem dan aplikasi desktop.
-- Hasil eksperimen di Linux umumnya menunjukkan efisiensi yang lebih baik dan fairness yang dinamis, sedangkan di Windows lebih fokus pada respons aplikasi dan kestabilan dengan pengaturan prioritas yang lebih ketat dan timeslice yang tetap.
-
 
 1. Data Proses (Burst Time, Arrival Time, Priority)
 
