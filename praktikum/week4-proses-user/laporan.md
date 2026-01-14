@@ -1,6 +1,6 @@
 
 # Laporan Praktikum Minggu [X]
-Topik: [Manajemen Proses dan User di Linux"]
+Topik: [Manajemen Proses dan User di Linux]
 
 ---
 
@@ -123,21 +123,6 @@ Sertakan screenshot hasil percobaan atau diagram:
 ---
 
 ## Analisis
-Hasil percobaan
-
- menunjukkan pengelolaan user dan proses di Linux yang sesuai dengan teori sistem operasi. Perintah seperti whoami, id, dan groups menampilkan identitas user dan hak akses berdasarkan UID, GID, dan grup, yang dikelola oleh kernel melalui system call untuk kontrol akses.
-
-hubungan hasil dengan teori (fungsi kernel, system call, arsitektur OS).
-
-Proses baru dibuat dan dijalankan (mis. sleep 1000 &) dengan PID unik, membuktikan manajemen proses oleh kernel yang mengatur penjadwalan dan resource. Perintah kill <PID> mengirim sinyal untuk mengontrol proses, memperlihatkan interaksi user space dengan kernel.
-
-Apa perbedaan hasil di lingkungan OS berbeda (Linux vs Windows)?
-
-Perbedaan di Windows, meskipun ada konsep PID dan proses, manajemen user dan proses memakai model akses berbasis token dan antarmuka berbeda (Task Manager, PowerShell), dengan eskalasi hak yang diatur UAC, sedangkan Linux menggunakan sistem file permission dan grup.
-
-Singkatnya, percobaan menunjukkan kerja kernel dalam manajemen user dan proses, penggunaan system call untuk interaksi, dan perbedaan model keamanan antara Linux dan Windows. Semua ini menegaskan arsitektur OS yang memisahkan user space dan kernel space untuk keamanan dan stabilitas 
-
-
 
 Eksperimen 1 – Identitas User
 
