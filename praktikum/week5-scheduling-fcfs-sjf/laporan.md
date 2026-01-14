@@ -116,13 +116,6 @@ Sertakan screenshot hasil percobaan atau diagram:
 
 ## Analisis
 
-Hasil percobaan pada algoritma penjadwalan CPU FCFS dan SJF menyatakan perbedaan signifikan dalam waktu tunggu (waiting time) dan waktu penyelesaian (turnaround time), di mana SJF cenderung memberikan hasil lebih efisien dengan rata-rata waktu tunggu dan turnaround time lebih rendah. Ini berarti SJF mampu meminimalkan keterlambatan proses dan lebih optimal dalam memanfaatkan CPU dibanding FCFS yang eksekusinya berdasarkan urutan kedatangan tanpa mempertimbangkan durasi proses.
-
-Secara teoritis, hal ini berkaitan erat dengan fungsi kernel dalam sistem operasi. Kernel bertanggung jawab untuk manajemen proses, termasuk penjadwalan CPU menggunakan algoritma seperti FCFS atau SJF. Kernel melakukan system call yang menjadi gerbang komunikasi antara aplikasi user mode dengan kernel mode untuk pengalokasian CPU sesuai jadwal. Penjadwalan oleh kernel bertujuan memaksimalkan efisiensi penggunaan CPU sekaligus memastikan responsif terhadap berbagai proses. Algoritma penjadwalan menentukan proses mana yang akan dieksekusi berikutnya dan berapa lama slot waktunya, sehingga berdampak langsung pada performa sistem.
-
-Perbedaan hasil di lingkungan OS seperti Linux dan Windows dapat muncul karena perbedaan desain kernel dan algoritma penjadwalan yang digunakan. Linux menggunakan kernel monolitik dengan banyak varian algoritma penjadwalan termasuk Completely Fair Scheduler (CFS) yang lebih kompleks dan adil, sementara Windows menggunakan kernel hybrid dengan algoritma prioritas berbasis kuantum waktu (time quantum) serta pengelolaan preemptive multitasking yang dioptimalkan untuk desktop. Meskipun konsep dasar penjadwalan tetap sama, implementasi dan tuning di kernel membuat kinerja penjadwalan CPU dapat berbeda dalam efisiensi respons, latency, dan throughput tergantung pengaturan OS dan beban kerja.
-
-
 1. Data Proses  
 | Proses | Burst Time | Arrival Time |  
 |:------:|:----------:|:------------:|  
