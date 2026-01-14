@@ -142,8 +142,11 @@ def sjf_nonpreemptive(processes):
     avg_waiting = sum(p['waiting_time'] for p in proc) / len(proc)
     avg_turnaround = sum(p['turnaround_time'] for p in proc) / len(proc)
     return proc, avg_waiting, avg_turnaround
+    
+ ```
 
 # Eksekusi simulasi
+```bash
 print("=== SIMULASI PENJADWALAN CPU ===\n")
 
 # FCFS
@@ -165,9 +168,8 @@ for p in sjf_procs:
     print(f"| {p['pid']:^3} | {p['arrival']:^2} | {p['burst']:^2} | {p['start_time']:^3} | {p['completion_time']:^3} | {p['waiting_time']:^3} | {p['turnaround_time']:^3} |")
 print(f"| **Rata** |    |    |     |     | **{sjf_avg_wt:.2f}** | **{sjf_avg_tat:.2f}** |")
 
-```
 
-```bash
+
 Dataset
 
 pid,arrival_time,burst_time
